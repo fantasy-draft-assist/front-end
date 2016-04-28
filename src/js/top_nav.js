@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
+import Cookie from 'js-cookie';
+import { ajax, ajaxSetup } from 'jquery';
 
 export default class TopNav extends Component {
 
-	clickHandler();
-	// Make the clickHandler do something.
+	clickHandler() {
+		Cookie.remove('currentUser');
+		ajaxSetup({
+			headers: { 'Internal_Auth': '' }
+		});
+		hashHistory.push('/');
+	}
 
 	render() {
 		return (
@@ -16,7 +23,7 @@ export default class TopNav extends Component {
 					<Link to="/league_settings">
 						<li>League Settings</li>
 					</Link>
-					<Link to="/">
+					<Link to="/account_settings">
 						<li>Account Settings</li>
 					</Link>
 					<li onClick={this.clickHandler}>Logout</li>

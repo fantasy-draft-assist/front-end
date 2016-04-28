@@ -1,5 +1,22 @@
 /* CSS Entry Point */
 
 // Turn on freq used libraries
-// @import 'normalize-css/normalize';
-// @import 'font-awesome/scss/font-awesome';
+@import 'normalize-css/normalize';
+@import 'font-awesome/scss/font-awesome';
+
+
+// .app {
+// 	height: 2000px;
+// 	width: 2000px;
+// }
+
+// .main {
+// 	height: 2000px;
+// 	width: 2000px;
+// }
+
+a {
+	text-decoration: none;
+	color: #000000;
+	font-weight: bold;
+}

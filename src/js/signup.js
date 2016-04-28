@@ -1,42 +1,42 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import SSF from 'react-simple-serial-form';
 import Cookie from 'js-cookie';
-import { ajax } from 'jquery';
+import { ajax, ajaxSetup } from 'jquery';
 
-export default class Signup extends Comonent {
+export default class Signup extends Component {
 
 	dataHandler(signupData) {
+		console.log('Handler works.', signupData);
+
 		ajax({
-			url: 'GET URL FROM MITCH',
+			url: 'https://hockeydoctor.herokuapp.com/registration',
 			type: 'POST',
 			data: signupData,
 			cache: false,
-			dataType: 'json',
+			dataType: 'json'
 		}).then((response) => {
-			console.log('login response is', response);
-			if (response.user.email) {
-				Cookie.set('currentUser', response.user.auth_token, { expires: 7 });
-				ajaxSetup({
-					headers: { auth_token: response.user.auth_token }
-				})
-				console.log(response.user.auth_token);
-				hashHistory.push('/home');
-			}
-			else {
-				alert('Signup was unsuccessful. Please try again.');
-			}
-		})
-	}
+			console.log('signup response is', response);
+			Cookie.set('currentUser', response.user.auth_token, { expires: 7 });
+			ajaxSetup({
+				headers: { 'Internal_Auth': response.user.auth_token }
+			})
+			console.log(response.user.auth_token);
+			hashHistory.push('/home');
+		}).fail(error => {
+			alert('Signup was unsuccessful. Please try again.');
+		});
+	};
 
 	render() {
 		return (
-			<div>
+			<div className="signup">
 				<SSF onData={this.dataHandler}>
 					<input name="email" type="email" placeholder="Enter Your Email" />
 					<input name="username" type="text" placeholder="Create a Username" />
 					<input name="password" type="password" placeholder="Create a Password" />
 					<select name="favorite_team">
+						<option>Favorite NHL Team</option>
 						<option value="Anaheim Ducks">Anaheim Ducks</option>
 						<option value="Boston Bruins">Boston Bruins</option>
 						<option value="Buffalo Sabres">Buffalo Sabres</option>
@@ -70,9 +70,16 @@ export default class Signup extends Comonent {
 					</select>
 					<button>Create Account</button>
 				</SSF>
-				Already have an account? <Link to="/login">Log in.</Link>
+				Already have an account? <Link to="/">Log in.</Link>
 			</div>
 		)
 	}
-	
 }
+
+
+		// let data = new FormData();
+
+		// data.append("email", signupData.email);
+		// data.append("username", signupData.username);
+		// data.append("password", signupData.password);
+		// data.append("favorite_team", signupData.favorite_team);
