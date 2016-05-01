@@ -1,7 +1,7 @@
 import React, { Component, PropTypes} from 'react';
 
 import TopNav from './top_nav';
-import LeftNav from './left_nav';
+import BottomNav from './bottom_nav';
 
 export default class WithNavs extends Component {
 
@@ -9,8 +9,8 @@ export default class WithNavs extends Component {
 		return (
 			<div className="with-navs">
 				<TopNav />
-				<LeftNav />
 				{this.props.children}
+				<BottomNav />
 			</div>
 		)
 	}

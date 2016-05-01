@@ -16,18 +16,39 @@ export default class TopNav extends Component {
 	render() {
 		return (
 			<div className="top-nav">
+
 				<ul>
+
+					<Link to="/mock_draft">
+						<li>Mock Draft</li>
+					</Link>
+					<Link to="/rankings">
+						<li>Player Ranks</li>
+					</Link>
+					<Link to="/timeline">
+						<li>Historical Data</li>
+					</Link>
+					<Link to="/side_by_side">
+						<li>Side-By-Side Comparison</li>
+					</Link>
+
+				</ul>
+
+				<ul>
+
 					<Link to="/about">
-						<li>About APP NAME HERE</li>
+						<li>About</li>
 					</Link>
 					<Link to="/league_settings">
-						<li>League Settings</li>
+						<li>Settings</li>
 					</Link>
 					<Link to="/account_settings">
-						<li>Account Settings</li>
+						<li>Account</li>
 					</Link>
 					<li onClick={this.clickHandler}>Logout</li>
+
 				</ul>
+
 			</div>
 		)
 	}
