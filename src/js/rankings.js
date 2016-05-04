@@ -1,5 +1,10 @@
+// This component shows a ranking of all NHL players based on the app's proprietary ranking algorithm,
+// combined with the user's league settings.
+// Rankings can be displayed to show all players or rankings by individual positions.
+
 import React, { Component } from 'react';
 import { ajax } from 'jquery';
+import SSF from 'react-simple-serial-form';
 
 export default class Rankings extends Component {
 
@@ -31,10 +36,19 @@ export default class Rankings extends Component {
 
 				<p>Player Rankings</p>
 
-				<div>
-					<ul>
-						{hockeyPlayers.map(::this.generateRankings)}
-					</ul>
+				<SSF>
+					<select>
+						<option>See Rankings By Position</option>
+						<option></option>
+						<option value='lw'>Left Wing</option>
+						<option value='rw'>Right Wing</option>
+						<option value='c'>Center</option>
+						<option value='d'>Defenseman</option>
+						<option value='g'>Goalie</option>
+					</select>
+				</SSF>
+
+				<div className="RANKINGS WILL GO IN HERE // CHANGE THIS CLASSNAME">
 				</div>
 			
 			</div>

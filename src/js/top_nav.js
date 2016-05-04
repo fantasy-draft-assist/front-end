@@ -1,3 +1,5 @@
+// This component houses the primary navigation for the app.
+
 import React, { Component } from 'react';
 import { Link, hashHistory } from 'react-router';
 import Cookie from 'js-cookie';
@@ -18,7 +20,6 @@ export default class TopNav extends Component {
 			<div className="top-nav">
 
 				<ul>
-
 					<Link to="/mock_draft">
 						<li>Mock Draft</li>
 					</Link>
@@ -31,11 +32,9 @@ export default class TopNav extends Component {
 					<Link to="/side_by_side">
 						<li>Side-By-Side Comparison</li>
 					</Link>
-
 				</ul>
 
 				<ul>
-
 					<Link to="/about">
 						<li>About</li>
 					</Link>
@@ -46,7 +45,6 @@ export default class TopNav extends Component {
 						<li>Account</li>
 					</Link>
 					<li onClick={this.clickHandler}>Logout</li>
-
 				</ul>
 
 			</div>

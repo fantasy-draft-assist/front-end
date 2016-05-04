@@ -1,3 +1,6 @@
+// This component is used for CRUD.
+// Specifically, users can update or delete an account when this component is rendered.
+
 import React, { Component } from 'react';
 import { hashHistory } from 'react-router';
 import SSF from 'react-simple-serial-form';

@@ -1,3 +1,5 @@
+// The bottom nav exists purely for social media links and other internal links commonly found on websites.
+
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 

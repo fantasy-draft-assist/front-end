@@ -16,6 +16,8 @@ import Rankings from './rankings';
 import Timeline from './timeline';
 import SideBySide from './side_by_side';
 
+
+// Below is the general route structure of the app, as written using the React Router.
 render ((
 	<Router history={ hashHistory }>
 		<Route path="/" component={ Main }>

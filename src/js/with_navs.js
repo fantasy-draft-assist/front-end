@@ -1,3 +1,5 @@
+// This component is used as a subroute in the React Router to display all children with the TopNav and BottomNav components.
+
 import React, { Component, PropTypes} from 'react';
 
 import TopNav from './top_nav';

@@ -1,3 +1,6 @@
+// This component is the bread and butter of the app, as well as its most complex piece.
+// In this component, users can complete a mock draft to prepare for a real fantasy hockey draft.
+
 import React, { Component } from 'react';
 import { ajax } from 'jquery';
 
