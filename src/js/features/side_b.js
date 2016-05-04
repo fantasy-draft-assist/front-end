@@ -2,6 +2,8 @@
 
 import React, { Component } from 'react';
 
+import nhlTeams from '../miscellaneous/nhl_teams';
+
 export default class SideB extends Component {
 	
 	// optionTeamFiller fills  in the select box with options of each NHL team for users to select.

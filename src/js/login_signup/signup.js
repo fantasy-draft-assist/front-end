@@ -6,7 +6,7 @@ import SSF from 'react-simple-serial-form';
 import Cookie from 'js-cookie';
 import { ajax, ajaxSetup } from 'jquery';
 
-import nhlTeams from './nhl_teams';
+import nhlTeams from '../miscellaneous/nhl_teams';
 
 export default class Signup extends Component {
 
