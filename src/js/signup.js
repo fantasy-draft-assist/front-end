@@ -6,14 +6,14 @@ import SSF from 'react-simple-serial-form';
 import Cookie from 'js-cookie';
 import { ajax, ajaxSetup } from 'jquery';
 
-import nhlTeams from '../miscellaneous/nhl_teams';
+import nhlTeams from './nhl_teams';
 
 export default class Signup extends Component {
 
 	// optionTeamFiller fills  in the select box with options of each NHL team for users to select.
 	optionTeamFiller(nhlTeam) {
 		return (
-			<option value={nhlTeam}>`${nhlTeam}`</option>
+			<option value={nhlTeam}>{nhlTeam}</option>
 		)
 	}
 

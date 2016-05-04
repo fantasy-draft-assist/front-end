@@ -8,22 +8,22 @@ import Chart from 'chart.js';
 
 export default class Timeline extends Component {
 
-	constructor(...args) {
-		super(...args);
+	// constructor(...args) {
+	// 	super(...args);
 
-		this.state = { hockeyPlayers: [] };
-	}
+	// 	this.state = { hockeyPlayers: [] };
+	// }
 
-	componentWillMount() {
-		ajax('G E T   U R L   F R O M   M I T C H').then((timelineData) => {
-			this.setState( {hockeyPlayers: timelineData} )
-		});
-	}
+	// componentWillMount() {
+	// 	ajax('G E T   U R L   F R O M   M I T C H').then((timelineData) => {
+	// 		this.setState( {hockeyPlayers: timelineData} )
+	// 	});
+	// }
 
-	var data = {};
-	var option = {};
-	var ctx = document.getElementById('timelineChart').getConext('2d');
-	var myChart = new Chart(ctx).Line(data, option);
+	// var data = {};
+	// var option = {};
+	// var ctx = document.getElementById('timelineChart').getConext('2d');
+	// var myChart = new Chart(ctx).Line(data, option);
 
 	render() {
 		return (

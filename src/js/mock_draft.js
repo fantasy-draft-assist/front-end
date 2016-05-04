@@ -18,15 +18,15 @@ export default class MockDraft extends Component {
 		});
 	}
 
-	getDraftList(hockeyPlayer) {
-		return (
-			hockeyPlayer.name
-			hockeyPlayer.team
-			hockeyPlayer.position
-			hockeyPlayer.goals
-			hockeyPlayer.assists
-		)
-	}
+	// getDraftList(hockeyPlayer) {
+	// 	return (
+	// 		hockeyPlayer.name
+	// 		hockeyPlayer.team
+	// 		hockeyPlayer.position
+	// 		hockeyPlayer.goals
+	// 		hockeyPlayer.assists
+	// 	)
+	// }
 
 	render() {
 		return (
@@ -35,7 +35,7 @@ export default class MockDraft extends Component {
 				<p>Mock Draft</p>
 				<div>
 					<ul>
-						{hockeyPlayers.map(::this.getDraftList)}
+						<li>Draft</li>
 					</ul>
 				</div>
 			
