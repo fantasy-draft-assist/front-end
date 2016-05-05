@@ -69,7 +69,7 @@ export default class Rankings extends Component {
 						<option value='G'>Goalie</option>
 					</select>
 
-				<div className="RANKINGS WILL GO IN HERE // CHANGE THIS CLASSNAME">
+				<div className="player-rankings">
 					<ul>
 						{this.getData()}
 					</ul>
@@ -79,13 +79,3 @@ export default class Rankings extends Component {
 		)
 	}
 }
-
-	// generateRankings(hockeyPlayer) {
-	// 	return (
-	// 		hockeyPlayer.name
-	// 		hockeyPlayer.team
-	// 		hockeyPlayer.position
-	// 		hockeyPlayer.goals
-	// 		hockeyPlayer.assists
-	// 	)
-	// }

@@ -27,11 +27,90 @@ export default class AccountSettings extends Component {
 	// 	})
 	// }
 
+	fillLeagueTeams() {
+		let total_options = []
+		for (let i = 8; i <= 20; i++) {
+			total_options.push(<option value={i}>{i}</option>)
+		}
+		return total_options;
+	}
+
 
 	render() {
 		return (
 			<div className="account-settings">
 				<p>Account Settings</p>
+				<SSF>
+					<select>
+						<option>Number of Teams in Your League</option>
+						{this.fillLeagueTeams()}
+					</select>
+					<br />
+					<br />
+					Skater Stats
+					<br />
+					<input type="checkbox" name="goals" />Goals
+					<br />
+					<input type="checkbox" name="assists" />Assists
+					<br />
+					<input type="checkbox" name="points" />Points
+					<br />
+					<input type="checkbox" name="plus_minus" />Plus / Minus
+					<br />
+					<input type="checkbox" name="penalty_minutes" />Penalty Minutes
+					<br />
+					<input type="checkbox" name="powerplay_goals" />Powerlay Goals
+					<br />
+					<input type="checkbox" name="powerplay_assists" />Powerplay Assists
+					<br />
+					<input type="checkbox" name="powerplay_points" />Powerplay Points
+					<br />
+					<input type="checkbox" name="shorthanded_goals" />Shorthanded Goals
+					<br />
+					<input type="checkbox" name="shorthanded_assists" />Shorthanded Assists
+					<br />
+					<input type="checkbox" name="shorthanded_points" />SHorthanded Points
+					<br />
+					<input type="checkbox" name="game_winning_goals" />Game-Winning Goals
+					<br />
+					<input type="checkbox" name="shots_on_goal" />Shots On Goal
+					<br />
+					<input type="checkbox" name="shot_percentage" />Shot Percentage
+					<br />
+					<input type="checkbox" name="faceoffs_won" />Faceoffs Won
+					<br />
+					<input type="checkbox" name="faceoffs_lost" />Faceoffs Lost
+					<br />
+					<br />
+					Goalie Stats
+					<br />
+					<input type="checkbox" name="games_started" />Games games_started
+					<br />
+					<input type="checkbox" name="wins" />Wins
+					<br />
+					<input type="checkbox" name="losses" />Losses
+					<br />
+					<input type="checkbox" name="goals_against" />Goals Against
+					<br />
+					<input type="checkbox" name="goals_against_average" />Goals Against Average
+					<br />
+					<input type="checkbox" name="shots_against" />Shots Against
+					<br />
+					<input type="checkbox" name="saves" />Saves
+					<br />
+					<input type="checkbox" name="save_percentage" />Save Percentage
+					<br />
+					<input type="checkbox" name="shutouts" />Shutouts
+					<br />
+					<input type="checkbox" name="minutes_played" />Minutes Played
+					<br />
+					<input type="checkbox" name="hits" />Hits
+					<br />
+					<input type="checkbox" name="blocks" />Blocks
+					<br />
+					<button>Save Settings</button>
+					<br />
+				</SSF>
 			</div>
 		)
 	}
