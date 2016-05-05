@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import SSF from 'react-simple-serial-form';
 
-import nhlTeams from './nhl_teams';
+import nhlTeams from '../miscellaneous/nhl_teams';
 
 export default class SideB extends Component {
 	

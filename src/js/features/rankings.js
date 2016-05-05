@@ -30,8 +30,9 @@ export default class Rankings extends Component {
 	}
 
 	componentWillMount() {
-		ajax('G E T   U R L   F R O M   M I T C H').then((rankingsData) => {
-			this.setState( {hockeyPlayers: rankingsData} )
+		ajax('https://hockeydoctor.herokuapp.com/players/35/2012').then((movesLikeJagr) => {
+			console.log('Jaromir Jagr =>',movesLikeJagr);
+			// this.setState( {hockeyPlayers: rankingsData} )
 		});
 	}
 
@@ -58,7 +59,6 @@ export default class Rankings extends Component {
 
 				<p>Player Rankings</p>
 
-				<SSF>
 					<select onChange={::this.setFilter}>
 						<option>See Rankings By Position</option>
 						<option value=''>All</option>
@@ -68,7 +68,6 @@ export default class Rankings extends Component {
 						<option value='D'>Defenseman</option>
 						<option value='G'>Goalie</option>
 					</select>
-				</SSF>
 
 				<div className="RANKINGS WILL GO IN HERE // CHANGE THIS CLASSNAME">
 					<ul>

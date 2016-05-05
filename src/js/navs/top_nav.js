@@ -24,20 +24,11 @@ export default class TopNav extends Component {
 						<li>Mock Draft</li>
 					</Link>
 					<Link to="/rankings">
-						<li>Player Ranks</li>
-					</Link>
-					<Link to="/timeline">
-						<li>Historical Data</li>
-					</Link>
-					<Link to="/side_by_side">
-						<li>Side-By-Side Comparison</li>
+						<li>Player Rankings</li>
 					</Link>
 				</ul>
 
 				<ul>
-					<Link to="/about">
-						<li>About</li>
-					</Link>
 					<Link to="/league_settings">
 						<li>Settings</li>
 					</Link>

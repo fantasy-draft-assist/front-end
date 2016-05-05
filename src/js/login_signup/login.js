@@ -37,12 +37,18 @@ export default class Login extends Component {
 	render() {
 		return (
 			<div className="login">
-				<SSF onData={this.dataHandler}>
-					<input name="username" type="text" placeholder=" Username" />
-					<input name="password" type="password" placeholder=" Password" />
-					<button>Log In</button>
-				</SSF>
-				Need to create a new account? <Link to="/signup">Sign up here.</Link>
+				<ul>
+					<li>
+						<SSF onData={this.dataHandler}>
+							<input className="login-field" name="username" type="text" placeholder=" Username" />
+							<input className="login-field" name="password" type="password" placeholder=" Password" />
+							<button>Log In</button>
+						</SSF>
+					</li>
+					<li>
+						Need to create a new account? <Link to="/signup">Sign up here.</Link>
+					</li>
+				</ul>
 			</div>
 		)
 	}

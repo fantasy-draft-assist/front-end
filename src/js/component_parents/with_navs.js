@@ -2,8 +2,8 @@
 
 import React, { Component, PropTypes} from 'react';
 
-import TopNav from './top_nav';
-import BottomNav from './bottom_nav';
+import TopNav from '../navs/top_nav';
+import BottomNav from '../navs/bottom_nav';
 
 export default class WithNavs extends Component {
 
