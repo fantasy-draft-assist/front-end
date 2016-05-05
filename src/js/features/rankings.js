@@ -5,6 +5,7 @@
 import React, { Component } from 'react';
 import { ajax } from 'jquery';
 import SSF from 'react-simple-serial-form';
+import { hashHistory } from 'react-router';
 
 const MOCK_DATA = [
 	{ pos: 'LW', name: 'A'},
@@ -29,10 +30,11 @@ export default class Rankings extends Component {
 		this.state = { hockeyPlayers: [], filter: null };
 	}
 
+	// When the component mounts
 	componentWillMount() {
-		ajax('https://hockeydoctor.herokuapp.com/players/35/2012').then((movesLikeJagr) => {
-			console.log('Jaromir Jagr =>',movesLikeJagr);
-			// this.setState( {hockeyPlayers: rankingsData} )
+		ajax('https://hockeydoctor.herokuapp.com/players/35/2012').then((hockeyPlayers) => {
+			console.log('Hockey Players I Got Back =>',hockeyPlayers);
+			this.setState( {hockeyPlayers} );
 		});
 	}
 
@@ -41,40 +43,67 @@ export default class Rankings extends Component {
 	}
 
 	getData() {
-		let data = MOCK_DATA;
+		let data = this.state.hockeyPlayers;
 		if (this.state.filter) {
-			data = data.filter(x => x.pos === this.state.filter);
+			data = data.filter(hockeyPlayer => hockeyPlayer.Player.positions[0] === this.state.filter || hockeyPlayer.Player.positions[1] === this.state.filter || hockeyPlayer.Player.positions[2] === this.state.filter);
 		}
-		return data.map(x => (
+		return data.map(hockeyPlayer => (
 			<li>
-				<input type="checkbox"></input>
-				{x.name}
+				<input type="checkbox" value={hockeyPlayer.Player.yahoo_player_id}></input>
+				{hockeyPlayer.Player.first_name}
+				{hockeyPlayer.Player.last_name}
 			</li>
 		))
+	}
+
+
+	// Function called on button click to store playerID, pass that info along to a different component, and then render that component.
+	sbsHandler([idA, idB]) {
+		console.log(idA, idB)
+		hashHistory.push(`/side_by_side/${idA}/${idB}`);
+	}
+
+
+	// Function called on button click to store playerID, pass that info along to a different component, and then render that component.
+	chartHandler(comparisonData) {
+		hashHistory.push(`/timeline`);
+	}
+
+	// A data handler
+	dataHandler(comparisonData) {
+		if ( this.action === 'not chart') {
+			this.sbsHandler(comparisonData);
+		} else {
+			this.chartHandler(comparisonData);
+		}
 	}
 
 	render() {
 		return (
 			<div className="rankings">
-
 				<p>Player Rankings</p>
-
+				<SSF onData={::this.dataHandler}>
 					<select onChange={::this.setFilter}>
-						<option>See Rankings By Position</option>
-						<option value=''>All</option>
+						<option>Sort Rankings By Position</option>
+						<option value=''>All Positions</option>
 						<option value='LW'>Left Wing</option>
 						<option value='RW'>Right Wing</option>
 						<option value='C'>Center</option>
 						<option value='D'>Defenseman</option>
 						<option value='G'>Goalie</option>
 					</select>
-
-				<div className="player-rankings">
-					<ul>
-						{this.getData()}
-					</ul>
-				</div>
-			
+					<div className="player-rankings">
+						<ul>
+							{this.getData()}
+						</ul>
+					</div>
+					<div>
+						<button onClick={() => this.action = 'not chart'}>Side-By-Side Comparison</button>
+					</div>
+					<div>
+						<button onClick={() => this.action = 'chart'}>Graph Comparison</button>
+					</div>
+				</SSF>
 			</div>
 		)
 	}

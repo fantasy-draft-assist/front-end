@@ -31,7 +31,7 @@ render ((
 				<Route path="/mock_draft" component={ MockDraft } />
 				<Route path="/rankings" component={ Rankings } />
 				<Route path="/timeline" component={ Timeline } />
-				<Route path="/side_by_side" component={ SideBySide } />
+				<Route path="/side_by_side/:side_a/:side_b" component={ SideBySide } />
 			</Route>
 		</Route>
 	</Router>

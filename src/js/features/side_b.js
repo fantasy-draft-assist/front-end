@@ -20,6 +20,10 @@ export default class SideB extends Component {
 				<select>
 					<option>Find Player By Team</option>
 					{nhlTeams.map(this.optionTeamFiller)}
+					Name
+					Team
+					Position
+					Stats
 				</select>
 			</SSF>
 		)
