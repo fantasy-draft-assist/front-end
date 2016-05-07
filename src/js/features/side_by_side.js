@@ -7,6 +7,37 @@ import SideA from './side_a';
 import SideB from './side_b';
 
 export default class SideBySide extends Component {
+
+	// constructror(...args) {
+	// 	super(...args);
+
+	// 	this.state = { playersBeingCompared: [] }
+	// }
+
+	// componentWillMount() {
+	// 	ajax('URL FROM MITCH').then(player1 => {
+
+	// 		let { playersBeingCompared } = this.state;
+	// 		playersBeingCompared.push(player1);
+
+	// 		this.setState( { playersBeingCompared } );
+	// 	}).then(
+	// 		ajax(URL 2).then(player2 => {
+	// 			let { playersBeingCompared } = this.state;
+	// 			playersBeingCompared.push(player2);
+	// 			this.setState( { playersBeingCompared} );
+	// 		})
+	// 	)
+	// // }
+
+
+	// callBack() {
+	// 	return (
+	// 		<li>
+
+	// 		</li>
+	// 	)
+	// }
 	
 	render() {
 		return(
@@ -16,6 +47,10 @@ export default class SideBySide extends Component {
 
 				<SideA />
 				<SideB />
+
+				<ul>
+					{this.callBack}
+				</ul>
 			
 			</div>
 		)

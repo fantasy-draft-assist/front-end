@@ -7,20 +7,20 @@ import { ajax } from 'jquery';
 import SSF from 'react-simple-serial-form';
 import { hashHistory } from 'react-router';
 
-const MOCK_DATA = [
-	{ pos: 'LW', name: 'A'},
-	{ pos: 'LW', name: 'b'},
-	{ pos: 'RW', name: 'c'},
-	{ pos: 'RW', name: 'd'},
-	{ pos: 'C', name: 'e'},
-	{ pos: 'C', name: 'ff'},
-	{ pos: 'C', name: 'gg'},
-	{ pos: 'D', name: 'hh'},
-	{ pos: 'LW', name: 'ii'},
-	{ pos: 'G', name: 'jj'},
-	{ pos: 'G', name: 'kk'},
-	{ pos: 'G', name: 'll'}
-]
+// const MOCK_DATA = [
+// 	{ pos: 'LW', name: 'A'},
+// 	{ pos: 'LW', name: 'b'},
+// 	{ pos: 'RW', name: 'c'},
+// 	{ pos: 'RW', name: 'd'},
+// 	{ pos: 'C', name: 'e'},
+// 	{ pos: 'C', name: 'ff'},
+// 	{ pos: 'C', name: 'gg'},
+// 	{ pos: 'D', name: 'hh'},
+// 	{ pos: 'LW', name: 'ii'},
+// 	{ pos: 'G', name: 'jj'},
+// 	{ pos: 'G', name: 'kk'},
+// 	{ pos: 'G', name: 'll'}
+// ]
 
 export default class Rankings extends Component {
 
