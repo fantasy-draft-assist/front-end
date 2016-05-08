@@ -18,26 +18,28 @@ export default class TopNav extends Component {
 	render() {
 		return (
 			<div className="top-nav">
-
-				<ul>
-					<Link to="/mock_draft">
-						<li>Mock Draft</li>
+				<div className="top-logo">
+					<Link to="/home" className="logo">
+						Hockey Doctor
 					</Link>
-					<Link to="/rankings">
-						<li>Player Rankings</li>
-					</Link>
-				</ul>
-
-				<ul>
-					<Link to="/league_settings">
-						<li>Settings</li>
-					</Link>
-					<Link to="/account_settings">
-						<li>Account</li>
-					</Link>
-					<li onClick={this.clickHandler}>Logout</li>
-				</ul>
-
+				</div>
+				<div className="top-links">
+					<ul className="top-links-ul">
+						<Link to="/mock_draft">
+							<li className="top-links-li">Mock Draft</li>
+						</Link>
+						<Link to="/rankings">
+							<li className="top-links-li">Player Rankings</li>
+						</Link>
+						<Link to="/league_settings">
+							<li className="top-links-li">Settings</li>
+						</Link>
+						<Link to="/account_settings">
+							<li className="top-links-li">Account</li>
+						</Link>
+						<li onClick={this.clickHandler} className="top-links-li">Logout</li>
+					</ul>
+				</div>
 			</div>
 		)
 	}

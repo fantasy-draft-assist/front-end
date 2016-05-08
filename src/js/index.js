@@ -15,6 +15,8 @@ import MockDraft from './features/mock_draft';
 import Rankings from './features/rankings';
 import Timeline from './features/timeline';
 import SideBySide from './features/side_by_side';
+import Privacy from './miscellaneous/privacy';
+import Legal from './miscellaneous/legal';
 
 
 // Below is the general route structure of the app, as written using the React Router.
@@ -28,9 +30,11 @@ render ((
 				<Route path="/about" component={ About } />
 				<Route path="/league_settings" component={ LeagueSettings } />
 				<Route path="/account_settings" component={ AccountSettings } />
+				<Route path="/privacy" component={ Privacy } />
+				<Route path="/legal" component={ Legal } />
 				<Route path="/mock_draft" component={ MockDraft } />
 				<Route path="/rankings" component={ Rankings } />
-				<Route path="/timeline" component={ Timeline } />
+				<Route path="/timeline/:idA/:idB" component={ Timeline } />
 				<Route path="/side_by_side/:idA/:idB" component={ SideBySide } />
 			</Route>
 		</Route>

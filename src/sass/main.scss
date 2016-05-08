@@ -4,12 +4,34 @@
 @import 'normalize-css/normalize';
 @import 'font-awesome/scss/font-awesome';
 
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// VARIABLES
+
+$BruinsYellow: #ffc422;
+$BruinsBlack: #231f20;
+$FacebookBlue: #3d5b94;
+$InstagramBrown: #552b29;
+$LightningBlue: #003e7e;
+$TwitterBlue: #5ea9dd;
+$YouTubeRed: #ee1c1b;
+
+// VARIABLES
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 // GLOBAL ELEMENTS -- START
 
 * {
 	font-family: Helvetica;
+}
+
+body {
+	background: $BruinsYellow;
 }
 
 a {
@@ -124,23 +146,80 @@ li {
 // TOP NAV COMPONENT -- START
 
 .top-nav {
-	background: gray;
-	min-height: 50px;
-	max-width: 1280px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	font-size: 20px;
-	li {
-		color: black;
-		display: inline-block;
-		margin: 0px 10px 0px 10px;
-		&:hover {
-			color: white;
-			font-size: 22px;
+	height: 100px;
+	border-bottom: 15px solid $BruinsBlack;
+	.top-logo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: $BruinsYellow;
+		// border-bottom: 15px solid $BruinsBlack;
+		color: $BruinsBlack;
+		font-family: 'Shadows Into Light', cursive;
+		width: 30%;
+		a {
+			font-family: 'Shadows Into Light', cursive;
+			font-size: 60px;
+		}
+	}
+	.top-links {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background: $BruinsBlack;
+		// border-bottom: 15px solid $BruinsYellow;
+		width: 70%;
+		height: 100%;
+		.top-links-ul {
+			width: 100%;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			.top-links-li {
+				color: $BruinsYellow;
+				display: inline-block;
+				font-size: 30px;
+				&:hover {
+					color: $LightningBlue;
+				}
+			}
 		}
 	}
 }
+
+// .top-nav {
+// 	display: inline-block;
+// 	width: 100%;
+
+// 	.logo {
+// 		background: $BruinsYellow;
+// 		display: inline;
+// 		color: $BruinsBlack;
+// 		font-family: 'Shadows Into Light', cursive;
+// 		font-size: 50px;
+// 	}
+// 	.top-right {
+// 		background: $BruinsBlack;
+// 		height: 50px;
+// 		// max-width: 1280px;
+// 		display: flex;
+// 		justify-content: space-between;
+// 		align-items: center;
+// 		font-size: 20px;
+// 		li {
+// 			color: $BruinsYellow;
+// 			display: inline-block;
+// 			margin: 0px 10px 0px 10px;
+// 			&:hover {
+// 				color: $LightningBlue;
+// 				font-size: 22px;
+// 			}
+// 		}
+// 	}
+// }
 
 // TOP NAV COMPONENT -- END
 
@@ -151,58 +230,92 @@ li {
 // BOTTOM NAV COMPONENT -- START
 
 .bottom-nav {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	height: 120px;
-	background: gray;
+	display: block;
+	background: $BruinsBlack;
 	width: 100%;
-	.bottom-icons-ul {
-		margin: 20px auto 20px auto;
-		.bottom-icons-li {
-			display: inline-block;
-			.fa {
-				color: orangered;
-				background: mediumblue;
-				display: inline;
-				font-size: 50px;
-				border: 5px solid orangered;
-				border-radius: 100%;
-				margin: 20px 10px 20px 10px;
-				&.fa-facebook {
-					padding: 10px 20.72px 10px 20.72px;
-					&:hover {
-						background: orangered;
-						color: mediumblue;
-						border: 7px solid mediumblue;
+	.bottom-top {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		height: 120px;
+		.bottom-icons-ul {
+			margin: 20px auto 20px auto;
+			.bottom-icons-li {
+				display: inline-block;
+				.fa {
+					color: $BruinsYellow;
+					background: $BruinsBlack;
+					display: inline;
+					font-size: 50px;
+					border: 5px solid $BruinsYellow;
+					border-radius: 100%;
+					margin: 20px 10px 20px 10px;
+					&.fa-facebook {
+						padding: 10px 20.72px 10px 20.72px;
+						&:hover {
+							background: $BruinsBlack;
+							color: $FacebookBlue;
+							border: 7px solid $FacebookBlue;
+						}
 					}
-				}
-				&.fa-twitter {
-					padding: 10px 11.79px 10px 11.79px;
-					&:hover {
-						background: orangered;
-						color: mediumblue;
-						border: 7px solid mediumblue;
+					&.fa-twitter {
+						padding: 10px 11.79px 10px 11.79px;
+						&:hover {
+							background: $BruinsBlack;
+							color: $TwitterBlue;
+							border: 7px solid $TwitterBlue;
+						}
 					}
-				}
-				&.fa-instagram {
-					padding: 10px 13.58px 10px 13.58px;
-					&:hover {
-						background: orangered;
-						color: mediumblue;
-						border: 7px solid mediumblue;
+					&.fa-instagram {
+						padding: 10px 13.58px 10px 13.58px;
+						&:hover {
+							background: $BruinsBlack;
+							color: $InstagramBrown;
+							border: 7px solid $InstagramBrown;
+						}
 					}
-				}
-				&.fa-youtube {
-					padding: 10px 13.58px 10px 13.58px;
-					&:hover {
-						background: orangered;
-						color: mediumblue;
-						border: 7px solid mediumblue;
+					&.fa-youtube {
+						padding: 10px 13.58px 10px 13.58px;
+						&:hover {
+							background: $BruinsBlack;
+							color: $YouTubeRed;
+							border: 7px solid $YouTubeRed;
+						}
 					}
 				}
 			}
 		}
+		.bottom-words-ul {
+			.bottom-words-li {
+				color: $BruinsYellow;
+				display: inline-block;
+				font-size: 30px;
+				padding: 0px 25px 0px 25px;
+				&:hover {
+					color: $LightningBlue;
+				}
+				&.bottom-left-left {
+					border-right: 1px solid $BruinsYellow;
+				}
+				&.bottom-left-right {
+					border-left: 1px solid $BruinsYellow;
+				}
+				&.bottom-right-left {
+					border-right: 1px solid $BruinsYellow;
+				}
+				&.bottom-right-right {
+					border-left: 1px solid $BruinsYellow;
+				}
+			}
+		}
+	}
+	.bottom-bottom {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: $BruinsBlack;
+		color: $BruinsYellow;
+		height: 25px;
 	}
 }
 
@@ -212,10 +325,24 @@ li {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+// HOME COMPONENT -- START
+
+.home {
+	min-height: 424px;
+}
+
+// HOME COMPONENT -- END
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 // RANKINGS COMPONENT -- START
 
-.rankings {
 
+
+.rankings {
+	min-height: 424px;
 }
 
 // RANKINGS COMPONENT -- END
@@ -227,7 +354,7 @@ li {
 // MOCK DRAFT COMPONENT -- START
 
 .mock-draft {
-
+	min-height: 424px;
 }
 
 // MOCK DRAFT COMPONENT -- END
@@ -239,6 +366,7 @@ li {
 // RANKINGS COMPONENT -- START
 
 .rankings {
+	min-height: 424px;
 
 }
 
@@ -251,7 +379,7 @@ li {
 // TIMELINE COMPONENT -- START
 
 .timeline {
-
+	min-height: 424px;
 }
 
 // TIMELINE COMPONENT -- END
@@ -263,7 +391,7 @@ li {
 // SIDE BY SIDE COMPONENT -- START
 
 .side-by-side {
-
+	min-height: 424px;
 }
 
 // SIDE BY SIDE COMPONENT -- END
@@ -275,7 +403,7 @@ li {
 // LEAGUE SETTINGS COMPONENT -- START
 
 .league-settings {
-
+	min-height: 424px;
 }
 
 // LEAGUE SETTINGS COMPONENT -- END
@@ -287,7 +415,7 @@ li {
 // ACCOUNT SETTINGS COMPONENT -- START
 
 .account-settings {
-
+	min-height: 424px;
 }
 
 // ACCOUNT SETTINGS COMPONENT -- END
@@ -299,10 +427,31 @@ li {
 // ABOUT COMPONENT -- START
 
 .about {
-
+	min-height: 424px;
 }
 
 // ABOUT COMPONENT -- END
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+// PRIVACY COMPONENT -- START
+
+.privacy {
+	min-height: 424px;
+}
+
+// PRIVACY COMPONENT -- END
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// LEAGL COMPONENT -- START
+
+.legal {
+	min-height: 424px;
+}
+
+// LEAGL COMPONENT -- END
