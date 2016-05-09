@@ -26,16 +26,13 @@ export default class TopNav extends Component {
 				<div className="top-links">
 					<ul className="top-links-ul">
 						<Link to="/mock_draft">
-							<li className="top-links-li">Mock Draft</li>
+							<li className="top-links-li ">Mock Draft</li>
 						</Link>
 						<Link to="/rankings">
 							<li className="top-links-li">Player Rankings</li>
 						</Link>
 						<Link to="/league_settings">
-							<li className="top-links-li">Settings</li>
-						</Link>
-						<Link to="/account_settings">
-							<li className="top-links-li">Account</li>
+							<li className="top-links-li">League Settings</li>
 						</Link>
 						<li onClick={this.clickHandler} className="top-links-li">Logout</li>
 					</ul>
