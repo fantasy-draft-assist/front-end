@@ -3,9 +3,10 @@
 // Rankings can be displayed to show all players or rankings by individual positions.
 
 import React, { Component } from 'react';
-import { ajax } from 'jquery';
+import { ajax, ajaxSetup } from 'jquery';
 import SSF from 'react-simple-serial-form';
 import { hashHistory } from 'react-router';
+import Cookie from 'js-cookie';
 
 // const MOCK_DATA = [
 // 	{ pos: 'LW', name: 'A'},
@@ -32,7 +33,10 @@ export default class Rankings extends Component {
 
 	// When the component mounts
 	componentWillMount() {
-		ajax('https://hockeydoctor.herokuapp.com/players/35/2012').then((hockeyPlayers) => {
+		ajax({
+			url: 'https://hockeydoctor.herokuapp.com/players/index/1',
+			headers: { Internal: Cookie.get('currentUser') },
+			}).then((hockeyPlayers) => {
 			console.log('Hockey Players I Got Back =>',hockeyPlayers);
 			this.setState( {hockeyPlayers} );
 		});
@@ -49,7 +53,7 @@ export default class Rankings extends Component {
 		}
 		return data.map(hockeyPlayer => (
 			<li>
-				<input type="checkbox" value={hockeyPlayer.Player.yahoo_player_id}></input>
+				<input type="checkbox" value={hockeyPlayer.yahoo_player_id}></input>
 				{hockeyPlayer.Player.first_name}
 				{hockeyPlayer.Player.last_name}
 			</li>

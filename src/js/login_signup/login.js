@@ -23,7 +23,7 @@ export default class Login extends Component {
 			console.log('login response', response);
 			Cookie.set('currentUser', response.user.auth_token, { expires: 7 })
 			ajaxSetup({
-				headers: { Intenral_Auth: response.user.auth_token }
+				headers: { Intenral: response.user.auth_token }
 			})
 			console.log(response.user.auth_token);
 			hashHistory.push('/home');

@@ -58,7 +58,7 @@ export default class Signup extends Component {
 			console.log('signup response is', response);
 			Cookie.set('currentUser', response.user.auth_token, { expires: 7 });
 			ajaxSetup({
-				headers: { 'Internal_Auth': response.user.auth_token }
+				headers: { 'Internal': response.user.auth_token }
 			})
 			console.log(response.user.auth_token);
 			hashHistory.push('/home');
@@ -83,7 +83,7 @@ export default class Signup extends Component {
 								<li className="signup-left">
 									<input className="signup-field" name="email" type="email" placeholder=" Enter Your Email" />
 									<input className="signup-field" name="league_name" type="text" placeholder=" Fantasy League Team Name" />
-									<select className="signup-field" name="fantasy_teams">
+									<select className="signup-field" name="team_count">
 										<option>Teams in Your League</option>
 											{this.fillLeagueTeams()}
 									</select>
@@ -95,11 +95,11 @@ export default class Signup extends Component {
 								<li className="signup-right">
 									<input className="signup-field" name="username" type="text" placeholder=" Create a Username" />
 									<input className="signup-field" name="password" type="password" placeholder=" Create a Password" />
-									<select className="signup-field" name="skaters">
+									<select className="signup-field" name="player_count">
 										<option>Skaters Per Fantasy Team</option>
 											{this.fillTeamSkaters()}
 									</select>
-									<select className="signup-field" name="goalies">
+									<select className="signup-field" name="goalie_count">
 										<option>Goalies Per Fantasy Team</option>
 											{this.fillTeamGoalies()}
 									</select>
