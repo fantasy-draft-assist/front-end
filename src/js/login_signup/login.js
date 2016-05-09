@@ -38,6 +38,9 @@ export default class Login extends Component {
 		return (
 			<div className="login">
 				<ul>
+					<li className="login-logo">
+						Hockey Doctor
+					</li>
 					<li>
 						<SSF onData={this.dataHandler}>
 							<input className="login-field" name="username" type="text" placeholder=" Username" />
@@ -45,8 +48,11 @@ export default class Login extends Component {
 							<button>Log In</button>
 						</SSF>
 					</li>
-					<li>
-						Need to create a new account? <Link to="/signup">Sign up here.</Link>
+					<li className="below-login-text">
+						Need to create a new account?
+					</li>
+					<li className="below-login-link">
+						<Link to="/signup">Sign Up Here</Link>
 					</li>
 				</ul>
 			</div>

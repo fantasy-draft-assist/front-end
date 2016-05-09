@@ -35,15 +35,50 @@ export default class AccountSettings extends Component {
 		return total_options;
 	}
 
+	fillTeamSkaters() {
+		let total_options = []
+		for (let i = 1; i <= 23; i++) {
+			total_options.push(<option value={i}>{i}</option>)
+		}
+		return total_options;
+	}
+
+	fillTeamGoalies() {
+		let total_options = []
+		for (let i = 1; i <= 2; i++) {
+			total_options.push(<option value={i}>{i}</option>)
+		}
+		return total_options;
+	}
+
+	dataHandler(accountSettingsData) {
+		ajax({
+			url: '',
+			type: 'PUT',
+			data: accountSettingsData,
+			dataType: 'json',
+			cache: false
+		}).then(response => {
+			//do something here
+		})
+	}
 
 	render() {
 		return (
 			<div className="account-settings">
 				<p>Account Settings</p>
-				<SSF>
+				<SSF onData={this.dataHandler}>
 					<select>
 						<option>Number of Teams in Your League</option>
 						{this.fillLeagueTeams()}
+					</select>
+					<select>
+						<option>Skaters Per Fantasy Team</option>
+						{this.fillTeamSkaters()}
+					</select>
+					<select>
+						<option>Goalies Per Fantasy Team</option>
+						{this.fillTeamGoalies()}
 					</select>
 					<br />
 					<br />
@@ -69,7 +104,7 @@ export default class AccountSettings extends Component {
 					<br />
 					<input type="checkbox" name="shorthanded_assists" />Shorthanded Assists
 					<br />
-					<input type="checkbox" name="shorthanded_points" />SHorthanded Points
+					<input type="checkbox" name="shorthanded_points" />Shorthanded Points
 					<br />
 					<input type="checkbox" name="game_winning_goals" />Game-Winning Goals
 					<br />
@@ -84,7 +119,7 @@ export default class AccountSettings extends Component {
 					<br />
 					Goalie Stats
 					<br />
-					<input type="checkbox" name="games_started" />Games games_started
+					<input type="checkbox" name="games_started" />Games Started
 					<br />
 					<input type="checkbox" name="wins" />Wins
 					<br />

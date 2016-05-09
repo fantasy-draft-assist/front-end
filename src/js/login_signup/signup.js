@@ -50,11 +50,15 @@ export default class Signup extends Component {
 		return (
 			<div className="signup">
 				<ul>
+					<li className="signup-logo">
+						Hockey Doctor
+					</li>
 					<li>
 						<SSF onData={this.dataHandler}>
-							<input className="signup-field" name="email" type="email" placeholder="Enter Your Email" />
-							<input className="signup-field" name="username" type="text" placeholder="Create a Username" />
-							<input className="signup-field" name="password" type="password" placeholder="Create a Password" />
+							<input className="signup-field" name="email" type="email" placeholder=" Enter Your Email" />
+							<input className="signup-field" name="username" type="text" placeholder=" Create a Username" />
+							<input className="signup-field" name="password" type="password" placeholder=" Create a Password" />
+							<input className="signup-field" name="league_name" type="text" placeholder=" Fantasy League Team Name" />
 							<select className="signup-field" name="favorite_team">
 								<option>Favorite NHL Team</option>
 								{nhlTeams.map(this.optionTeamFiller)}
@@ -62,9 +66,11 @@ export default class Signup extends Component {
 							<button>Create Account</button>
 						</SSF>
 					</li>
-				
-					<li>
-						Already have an account? <Link to="/">  Log in.</Link>
+					<li className="below-signup-text">
+						Already have an account?
+					</li>
+					<li className="below-signup-link">
+						<Link to="/">Log In</Link>
 					</li>
 				</ul>
 			</div>
