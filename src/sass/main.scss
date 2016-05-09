@@ -390,7 +390,14 @@ li {
 // MOCK DRAFT COMPONENT -- START
 
 .mock-draft {
-	min-height: 424px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: gray;
+	min-height: 442px;
+	div {
+		font-size: 80px;
+	}
 }
 
 // MOCK DRAFT COMPONENT -- END
@@ -525,7 +532,21 @@ li {
 // ABOUT COMPONENT -- START
 
 .about {
+	background: gray;
+	color: $BruinsBlack;
 	min-height: 430px;
+	width: 50%;
+	padding: 20px 0px 20px 0px;
+	margin:  auto;
+	h3 {
+		color: $BruinsYellow;
+		font-family: 'Shadows Into Light', cursive;
+		font-size: 50px;
+		text-align: center;
+	}
+	p {
+		padding: 0px 20px 0px 20px;
+	}
 }
 
 // ABOUT COMPONENT -- END
@@ -537,8 +558,23 @@ li {
 // PRIVACY COMPONENT -- START
 
 .privacy {
-	min-height: 424px;
+	background: gray;
+	color: $BruinsBlack;
+	min-height: 430px;
+	width: 50%;
+	padding: 20px 0px 20px 0px;
+	margin:  auto;
+	h3 {
+		color: $BruinsYellow;
+		font-family: 'Shadows Into Light', cursive;
+		font-size: 50px;
+		text-align: center;
+	}
+	p {
+		padding: 0px 20px 0px 20px;
+	}
 }
+
 
 // PRIVACY COMPONENT -- END
 
@@ -549,7 +585,21 @@ li {
 // LEAGL COMPONENT -- START
 
 .legal {
-	min-height: 424px;
+	background: gray;
+	color: $BruinsBlack;
+	min-height: 430px;
+	width: 50%;
+	padding: 20px 0px 20px 0px;
+	margin:  auto;
+	h3 {
+		color: $BruinsYellow;
+		font-family: 'Shadows Into Light', cursive;
+		font-size: 50px;
+		text-align: center;
+	}
+	p {
+		padding: 0px 20px 0px 20px;
+	}
 }
 
 // LEAGL COMPONENT -- END

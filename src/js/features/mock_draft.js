@@ -31,14 +31,9 @@ export default class MockDraft extends Component {
 	render() {
 		return (
 			<div className="mock-draft">
-
-				<p>Mock Draft</p>
 				<div>
-					<ul>
-						<li>Draft</li>
-					</ul>
+					Coming Soon
 				</div>
-			
 			</div>
 		)
 	}
