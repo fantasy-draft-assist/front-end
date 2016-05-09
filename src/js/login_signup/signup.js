@@ -17,6 +17,30 @@ export default class Signup extends Component {
 		)
 	}
 
+	fillLeagueTeams() {
+		let total_options = []
+		for (let i = 8; i <= 20; i++) {
+			total_options.push(<option value={i}>{i}</option>)
+		}
+		return total_options;
+	}
+
+	fillTeamSkaters() {
+		let total_options = []
+		for (let i = 1; i <= 23; i++) {
+			total_options.push(<option value={i}>{i}</option>)
+		}
+		return total_options;
+	}
+
+	fillTeamGoalies() {
+		let total_options = []
+		for (let i = 1; i <= 2; i++) {
+			total_options.push(<option value={i}>{i}</option>)
+		}
+		return total_options;
+	}
+
 
 	// dataHandler grabs new user info and stores it in the back end.
 	dataHandler(signupData) {
@@ -55,14 +79,32 @@ export default class Signup extends Component {
 					</li>
 					<li>
 						<SSF onData={this.dataHandler}>
-							<input className="signup-field" name="email" type="email" placeholder=" Enter Your Email" />
-							<input className="signup-field" name="username" type="text" placeholder=" Create a Username" />
-							<input className="signup-field" name="password" type="password" placeholder=" Create a Password" />
-							<input className="signup-field" name="league_name" type="text" placeholder=" Fantasy League Team Name" />
-							<select className="signup-field" name="favorite_team">
-								<option>Favorite NHL Team</option>
-								{nhlTeams.map(this.optionTeamFiller)}
-							</select>
+							<ul className="signup-blocks">
+								<li className="signup-left">
+									<input className="signup-field" name="email" type="email" placeholder=" Enter Your Email" />
+									<input className="signup-field" name="league_name" type="text" placeholder=" Fantasy League Team Name" />
+									<select className="signup-field" name="fantasy_teams">
+										<option>Teams in Your League</option>
+											{this.fillLeagueTeams()}
+									</select>
+									<select className="signup-field" name="favorite_team">
+										<option>Favorite NHL Team</option>
+										{nhlTeams.map(this.optionTeamFiller)}
+									</select>
+								</li>
+								<li className="signup-right">
+									<input className="signup-field" name="username" type="text" placeholder=" Create a Username" />
+									<input className="signup-field" name="password" type="password" placeholder=" Create a Password" />
+									<select className="signup-field" name="skaters">
+										<option>Skaters Per Fantasy Team</option>
+											{this.fillTeamSkaters()}
+									</select>
+									<select className="signup-field" name="goalies">
+										<option>Goalies Per Fantasy Team</option>
+											{this.fillTeamGoalies()}
+									</select>
+								</li>
+							</ul>
 							<button>Create Account</button>
 						</SSF>
 					</li>

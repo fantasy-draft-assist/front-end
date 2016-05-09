@@ -11,7 +11,7 @@ export default class LeagueSettings extends Component {
 
 	render() {
 		return (
-			<div className="league-settings">
+			<div className="account-settings">
 				<p>Form Goes Here</p>
 			</div>
 		)

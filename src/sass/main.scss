@@ -31,7 +31,7 @@ $YouTubeRed: #ee1c1b;
 }
 
 body {
-	background: $BruinsYellow;
+	background: #ffffff;
 }
 
 a {
@@ -75,25 +75,38 @@ li {
 	color: $BruinsYellow;
 	font-size: 25px;
 	min-height: 701px;
-	.signup-field {
-		display: block;
-		height: 40px;
-		width: 400px;
-		background: $BruinsBlack;
-		border: 2px solid $BruinsYellow;
-		border-radius: 5px;
-		color: $BruinsYellow;
-		margin-bottom: 15px; 
+	.signup-blocks {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.signup-left {
+			margin-right: 10px;
+		}
+		.signup-right {
+			margin-left: 10px;
+		}
+		.signup-field {
+			display: block;
+			height: 40px;
+			width: 350px;
+			background: $BruinsBlack;
+			border: 2px solid $BruinsYellow;
+			border-radius: 5px;
+			color: $BruinsYellow;
+			margin-bottom: 15px; 
+		}
 	}
 	button {
-		height: 60px;
-		width: 402px;
+		height: 80px;
+		width: 740px;
 		background: $BruinsYellow;
 		border: 2px solid $BruinsBlack;
 		border-radius: 5px;
 		color: $BruinsBlack;
-		font-size: 40px;
-		margin-bottom: 22px;
+		font-family: 'Shadows Into Light', cursive;
+		font-size: 60px;
+		line-height: 80px;
+		margin: 20px auto;
 	}
 	.signup-logo {
 		display: flex;
@@ -426,18 +439,6 @@ li {
 // LEAGUE SETTINGS COMPONENT -- START
 
 .league-settings {
-	min-height: 424px;
-}
-
-// LEAGUE SETTINGS COMPONENT -- END
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-// ACCOUNT SETTINGS COMPONENT -- START
-
-.account-settings {
 	background: #ffffff;
 	display: flex;
 	justify-content: center;
@@ -464,6 +465,18 @@ li {
 		width: 400px;
 		height: 50px;
 	}
+}
+
+// LEAGUE SETTINGS COMPONENT -- END
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// ACCOUNT SETTINGS COMPONENT -- START
+
+.league-settings {
+	min-height: 424px;
 }
 
 // ACCOUNT SETTINGS COMPONENT -- END

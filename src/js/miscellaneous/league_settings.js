@@ -65,7 +65,7 @@ export default class AccountSettings extends Component {
 
 	render() {
 		return (
-			<div className="account-settings">
+			<div className="league-settings">
 				<SSF onData={this.dataHandler}>
 					<div className="teams-skaters-goalies">
 						<select className="tsg-options">
