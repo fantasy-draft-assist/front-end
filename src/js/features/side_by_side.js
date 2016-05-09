@@ -72,6 +72,3 @@ export default class SideBySide extends Component {
 		)
 	}
 }
-
-// <SideA />
-// <SideB />

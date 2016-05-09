@@ -5,23 +5,30 @@
 import React, { Component } from 'react';
 import SSF from 'react-simple-serial-form';
 import { ajax } from 'jquery';
+import Cookie from 'js-cookie';
 
 export default class LeagueSettings extends Component {
 
-	dataHandler(dataToDelete) {
-		let confirmMessage = confirm('Are you sure you want to delete your account with Hockey Doctor?');
-		if (confirmMessage === true) {
-			// ajax({
-			// 	url: GET FROM MITCH,
-			// 	type: 'DELETE',
-			// 	data: dataToDelete,
-			// 	dataType: 'json',
-			// 	cache: false
-			// }).then(response => {
+	dataHandler() {
+	// 	let dataToDelete = {
+	// 		userName:
+	// 		email:
+	// 	}
+	// 	let confirmMessage = confirm('Are you sure you want to delete your account with Hockey Doctor?');
+	// 	if (confirmMessage === true) {
+	// 		ajax({
+	// 			url: 'https://hockeydoctor.herokuapp.com/registration',
+	// 			type: 'DELETE',
+	// 			data: dataToDelete,
+	// 			dataType: 'json',
+	// 			headers: { Internal: Cookie.get('currentUser') },
+	// 			cache: false
+	// 		}).then(response => {
+	// 			console.log(The data here is )
 				hashHistory.push('/signup');
-			// })
+	// 		})
 		}
-	}
+	// }
 
 	render() {
 		return (

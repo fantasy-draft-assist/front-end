@@ -10,8 +10,8 @@
 
 // VARIABLES
 
-$BruinsYellow: #ffc422;
-$BruinsBlack: #231f20;
+$BruinsYello: #ffc422;
+$BruinsBlac: #231f20;
 $FacebookBlue: #3d5b94;
 $InstagramBrown: #552b29;
 $LightningBlack: #000000;
@@ -34,7 +34,7 @@ $YouTubeRed: #ee1c1b;
 }
 
 body {
-	background: $BruinsYellow;
+	background: $LightningWhite;
 }
 
 a {
@@ -74,8 +74,8 @@ li {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: $BruinsBlack;
-	color: $BruinsYellow;
+	background: $LightningBlue;
+	color: $LightningWhite;
 	font-size: 25px;
 	min-height: 701px;
 	.signup-blocks {
@@ -92,20 +92,20 @@ li {
 			display: block;
 			height: 40px;
 			width: 350px;
-			background: $BruinsBlack;
-			border: 2px solid $BruinsYellow;
+			background: $LightningBlue;
+			border: 2px solid $LightningWhite;
 			border-radius: 5px;
-			color: $BruinsYellow;
+			color: $LightningWhite;
 			margin-bottom: 15px; 
 		}
 	}
 	button {
 		height: 80px;
 		width: 740px;
-		background: $BruinsYellow;
-		border: 2px solid $BruinsBlack;
+		background: $LightningWhite;
+		border: 2px solid $LightningBlue;
 		border-radius: 5px;
-		color: $BruinsBlack;
+		color: $LightningBlue;
 		font-family: 'Shadows Into Light', cursive;
 		font-size: 60px;
 		line-height: 80px;
@@ -129,7 +129,7 @@ li {
 		justify-content: center;
 		margin-top: 8px;
 		a {
-			color: $LightningBlue;
+			color: $LightningGrey;
 			font-size: 40px;
 		}
 	}
@@ -147,27 +147,27 @@ li {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: $BruinsBlack;
-	color: $BruinsYellow;
+	background: $LightningBlue;
+	color: $LightningWhite;
 	font-size: 25px;
 	min-height: 701px;
 	.login-field {
 		display: block;
 		height: 40px;
 		width: 400px;
-		background: $BruinsBlack;
-		border: 2px solid $BruinsYellow;
+		background: $LightningBlue;
+		border: 2px solid $LightningWhite;
 		border-radius: 5px;
-		color: $BruinsYellow;
+		color: $LightningWhite;
 		margin-bottom: 15px; 
 	}
 	button {
 		height: 60px;
 		width: 402px;
-		background: $BruinsYellow;
-		border: 2px solid $BruinsBlack;
+		background: $LightningWhite;
+		border: 2px solid $LightningBlue;
 		border-radius: 5px;
-		color: $BruinsBlack;
+		color: $LightningBlue;
 		font-size: 40px;
 		margin-bottom: 22px;
 	}
@@ -189,7 +189,7 @@ li {
 		justify-content: center;
 		margin-top: 8px;
 		a {
-			color: $LightningBlue;
+			color: $LightningGrey;
 			font-size: 40px;
 			text-align: middle;
 		}
@@ -221,13 +221,13 @@ li {
 	justify-content: space-between;
 	align-items: center;
 	height: 100px;
-	border-bottom: 15px solid $BruinsBlack;
+	border-bottom: 15px solid $LightningGrey;
 	.top-logo {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background: $BruinsYellow;
-		color: $BruinsBlack;
+		background: $LightningWhite;
+		color: $LightningBlue;
 		font-family: 'Shadows Into Light', cursive;
 		width: 30%;
 		a {
@@ -239,7 +239,7 @@ li {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		background: $BruinsBlack;
+		background: $LightningBlue;
 		width: 70%;
 		height: 100%;
 		.top-links-ul {
@@ -248,11 +248,11 @@ li {
 			justify-content: space-around;
 			align-items: center;
 			.top-links-li {
-				color: $BruinsYellow;
+				color: $LightningWhite;
 				display: inline-block;
 				font-size: 30px;
 				&:hover {
-					color: $LightningBlue;
+					color: $LightningGrey;
 				}
 			}
 		}
@@ -270,7 +270,7 @@ li {
 
 .bottom-nav {
 	display: block;
-	background: $BruinsBlack;
+	background: $LightningBlue;
 	width: 100%;
 	.bottom-top {
 		display: flex;
@@ -282,43 +282,43 @@ li {
 			.bottom-icons-li {
 				display: inline-block;
 				.fa {
-					color: $BruinsYellow;
-					background: $BruinsBlack;
+					color: $LightningWhite;
+					background: $LightningBlue;
 					display: inline;
 					font-size: 50px;
-					border: 5px solid $BruinsYellow;
+					border: 5px solid $LightningWhite;
 					border-radius: 100%;
 					margin: 20px 10px 20px 10px;
 					&.fa-facebook {
 						padding: 10px 20.72px 10px 20.72px;
 						&:hover {
-							background: $BruinsBlack;
+							background: $LightningWhite;
 							color: $FacebookBlue;
-							border: 7px solid $FacebookBlue;
+							border: 7px solid $LightningWhite;
 						}
 					}
 					&.fa-twitter {
 						padding: 10px 11.79px 10px 11.79px;
 						&:hover {
-							background: $BruinsBlack;
+							background: $LightningWhite;
 							color: $TwitterBlue;
-							border: 7px solid $TwitterBlue;
+							border: 7px solid $LightningWhite;
 						}
 					}
 					&.fa-instagram {
 						padding: 10px 13.58px 10px 13.58px;
 						&:hover {
-							background: $BruinsBlack;
+							background: $LightningWhite;
 							color: $InstagramBrown;
-							border: 7px solid $InstagramBrown;
+							border: 7px solid $LightningWhite;
 						}
 					}
 					&.fa-youtube {
 						padding: 10px 13.58px 10px 13.58px;
 						&:hover {
-							background: $BruinsBlack;
+							background: $LightningWhite;
 							color: $YouTubeRed;
-							border: 7px solid $YouTubeRed;
+							border: 7px solid $LightningWhite;
 						}
 					}
 				}
@@ -326,24 +326,24 @@ li {
 		}
 		.bottom-words-ul {
 			.bottom-words-li {
-				color: $BruinsYellow;
+				color: $LightningWhite;
 				display: inline-block;
 				font-size: 30px;
 				padding: 0px 25px 0px 25px;
 				&:hover {
-					color: $LightningBlue;
+					color: $LightningGrey;
 				}
 				&.bottom-left-left {
-					border-right: 1px solid $BruinsYellow;
+					border-right: 1px solid $LightningWhite;
 				}
 				&.bottom-left-right {
-					border-left: 1px solid $BruinsYellow;
+					border-left: 1px solid $LightningWhite;
 				}
 				&.bottom-right-left {
-					border-right: 1px solid $BruinsYellow;
+					border-right: 1px solid $LightningWhite;
 				}
 				&.bottom-right-right {
-					border-left: 1px solid $BruinsYellow;
+					border-left: 1px solid $LightningWhite;
 				}
 			}
 		}
@@ -352,8 +352,8 @@ li {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background: $BruinsBlack;
-		color: $BruinsYellow;
+		background: $LightningBlue;
+		color: $LightningWhite;
 		height: 25px;
 	}
 }
@@ -396,7 +396,7 @@ li {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: gray;
+	background: $LightningGrey;
 	min-height: 442px;
 	div {
 		font-size: 80px;
@@ -451,11 +451,11 @@ li {
 .league-settings {
 	font-family: Arial;
 	font-size: 18px;
-	background: gray;
+	background: $LightningGrey;
 	margin: 0px 200px 0px 200px;
 	min-height: 424px;
 	.league-top-text {
-		color: $BruinsBlack;
+		color: $LightningBlue;
 		font-size: 25px;
 		font-weight: bold;
 		margin: auto;
@@ -473,15 +473,15 @@ li {
 			align-items: flex-start;
 			margin: 10px auto 10px auto;
 			.skater-stats {
-				color: $BruinsBlack;
+				color: $LightningBlue;
 				margin-right: 50px;
 			}
 			.goalie-stats {
-				color: $BruinsBlack;
+				color: $LightningBlue;
 				margin-left: 50px;
 			}
 			.stats-header {
-				color: $BruinsYellow;
+				color: $LightningWhite;
 				font-size: 30px;
 				text-decoration: underline;
 			}
@@ -489,10 +489,10 @@ li {
 		button {
 			display: flex;
 			justify-content: center;
-			background: $BruinsYellow;
-			border: 5px solid $BruinsBlack;
+			background: $LightningWhite;
+			border: 5px solid $LightningBlue;
 			border-radius: 5px;
-			color: $BruinsBlack;
+			color: $LightningBlue;
 			font-size: 30px;
 			font-weight: bold;
 			margin: 10px auto 40px auto;
@@ -511,16 +511,16 @@ li {
 // ACCOUNT SETTINGS COMPONENT -- START
 
 .account-settings {
-	background: gray;
+	background: $LightningGrey;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	min-height: 442px;
 	button {
-		background: $BruinsBlack;
-		border: 4px solid $BruinsYellow;
+		background: $LightningBlue;
+		border: 4px solid $LightningWhite;
 		border-radius: 7px;
-		color: $BruinsYellow;
+		color: $LightningWhite;
 		font-size: 30px;
 		width: 250px;
 		height: 80px;
@@ -536,14 +536,14 @@ li {
 // ABOUT COMPONENT -- START
 
 .about {
-	background: gray;
-	color: $BruinsBlack;
+	background: $LightningGrey;
+	color: $LightningBlue;
 	min-height: 430px;
 	width: 50%;
 	padding: 20px 0px 20px 0px;
 	margin:  auto;
 	h3 {
-		color: $BruinsYellow;
+		color: $LightningWhite;
 		font-family: 'Shadows Into Light', cursive;
 		font-size: 50px;
 		text-align: center;
@@ -562,14 +562,14 @@ li {
 // PRIVACY COMPONENT -- START
 
 .privacy {
-	background: gray;
-	color: $BruinsBlack;
+	background: $LightningGrey;
+	color: $LightningBlue;
 	min-height: 430px;
 	width: 50%;
 	padding: 20px 0px 20px 0px;
 	margin:  auto;
 	h3 {
-		color: $BruinsYellow;
+		color: $LightningWhite;
 		font-family: 'Shadows Into Light', cursive;
 		font-size: 50px;
 		text-align: center;
@@ -589,14 +589,14 @@ li {
 // LEAGL COMPONENT -- START
 
 .legal {
-	background: gray;
-	color: $BruinsBlack;
+	background: $LightningGrey;
+	color: $LightningBlue;
 	min-height: 430px;
 	width: 50%;
 	padding: 20px 0px 20px 0px;
 	margin:  auto;
 	h3 {
-		color: $BruinsYellow;
+		color: $LightningWhite;
 		font-family: 'Shadows Into Light', cursive;
 		font-size: 50px;
 		text-align: center;
