@@ -2,42 +2,61 @@
 
 import React, { Component } from 'react';
 import { ajax } from 'jquery';
+import Cookie from 'js-cookie';
 
 import SideA from './side_a';
 import SideB from './side_b';
 
 export default class SideBySide extends Component {
 
-	// constructror(...args) {
-	// 	super(...args);
+	constructor(...args) {
+		super(...args);
 
-	// 	this.state = { playersBeingCompared: [] }
-	// }
-
-	// componentWillMount() {
-	// 	ajax('URL FROM MITCH').then(player1 => {
-
-	// 		let { playersBeingCompared } = this.state;
-	// 		playersBeingCompared.push(player1);
-
-	// 		this.setState( { playersBeingCompared } );
-	// 	}).then(
-	// 		ajax(URL 2).then(player2 => {
-	// 			let { playersBeingCompared } = this.state;
-	// 			playersBeingCompared.push(player2);
-	// 			this.setState( { playersBeingCompared} );
-	// 		})
-	// 	)
-	// // }
+		this.state = { playersBeingCompared: [] }
+	}
 
 
-	// callBack() {
-	// 	return (
-	// 		<li>
+// http://hockeydoctor.herokuapp.com/players/one/35/
 
-	// 		</li>
-	// 	)
-	// }
+
+	componentWillMount() {
+		let { idA, idB } = this.props.params;
+		ajax({
+			url: `https://hockeydoctor.herokuapp.com/players/one/${idA}`,
+			headers: { Internal: Cookie.get('currentUser') }
+			}).then(player1 => {
+
+			let { playersBeingCompared } = this.state;
+			playersBeingCompared.push(player1);
+
+			this.setState( { playersBeingCompared } );
+		}).then(
+			ajax({
+			url: `https://hockeydoctor.herokuapp.com/players/one/${idB}`,
+			headers: { Internal: Cookie.get('currentUser') }
+			}).then(player2 => {
+				let { playersBeingCompared } = this.state;
+				playersBeingCompared.push(player2);
+				this.setState( { playersBeingCompared} );
+				console.log('After Ajax the state is =>', playersBeingCompared)
+			})
+		)
+	}
+
+
+	getSBSPlayers() {
+		let twoPlayers = this.state.playersBeingCompared;
+		console.log('Got it in the SBSPlayers callbck =>', twoPlayers);
+		return twoPlayers.map(datum => (
+			<li key={datum.player.yahoo_player_id}>
+				{datum.player.first_name}
+				{datum.player.last_name}
+				{datum.player.uniform_number}
+				{datum.player.positions}
+			</li>
+			)
+		)
+	}
 	
 	render() {
 		return(
@@ -45,14 +64,14 @@ export default class SideBySide extends Component {
 
 				<p>Side By Side Player Comparison</p>
 
-				<SideA />
-				<SideB />
-
 				<ul>
-					{this.callBack}
+					{this.getSBSPlayers()}
 				</ul>
 			
 			</div>
 		)
 	}
 }
+
+// <SideA />
+// <SideB />

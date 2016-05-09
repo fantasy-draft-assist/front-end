@@ -35,9 +35,9 @@ export default class Rankings extends Component {
 	componentWillMount() {
 		ajax({
 			url: 'https://hockeydoctor.herokuapp.com/players/index/1',
-			headers: { Internal: Cookie.get('currentUser') },
+			headers: { Internal: Cookie.get('currentUser') }
 			}).then((hockeyPlayers) => {
-			console.log('Hockey Players I Got Back =>',hockeyPlayers);
+			// console.log('Hockey Players I Got Back =>',hockeyPlayers);
 			this.setState( {hockeyPlayers} );
 		});
 	}
@@ -49,32 +49,36 @@ export default class Rankings extends Component {
 	getData() {
 		let data = this.state.hockeyPlayers;
 		if (this.state.filter) {
-			data = data.filter(hockeyPlayer => hockeyPlayer.Player.positions[0] === this.state.filter || hockeyPlayer.Player.positions[1] === this.state.filter || hockeyPlayer.Player.positions[2] === this.state.filter);
+			data = data.filter(hockeyPlayer => hockeyPlayer.positions[0] === this.state.filter || hockeyPlayer.positions[1] === this.state.filter || hockeyPlayer.positions[2] === this.state.filter);
 		}
 		return data.map(hockeyPlayer => (
-			<li>
-				<input type="checkbox" value={hockeyPlayer.yahoo_player_id}></input>
-				{hockeyPlayer.Player.first_name}
-				{hockeyPlayer.Player.last_name}
+			<li key={hockeyPlayer.yahoo_player_id}>
+				<input type="checkbox" name="forComparison" value={hockeyPlayer.yahoo_player_id}></input>
+				{hockeyPlayer.first_name}
+				{hockeyPlayer.last_name}
 			</li>
-		))
+			)
+		)
 	}
 
 
 	// Function called on button click to store playerID, pass that info along to a different component, and then render that component.
-	sbsHandler([idA, idB]) {
-		console.log(idA, idB)
-		hashHistory.push(`/side_by_side/${idA}/${idB}`);
+	sbsHandler(comparisonData) {
+		console.log('At sbsHandler =>', comparisonData)
+		console.log(comparisonData)
+		hashHistory.push(`/side_by_side/${comparisonData.forComparison[0]}/${comparisonData.forComparison[1]}`);
 	}
 
 
 	// Function called on button click to store playerID, pass that info along to a different component, and then render that component.
 	chartHandler(comparisonData) {
-		hashHistory.push(`/timeline`);
+		console.log('At chartHandler =>', comparisonData)
+		hashHistory.push(`/timeline/${comparisonData.forComparison[0]}/${comparisonData.forComparison[1]}`);
 	}
 
 	// A data handler
 	dataHandler(comparisonData) {
+		console.log('At dataHandler =>', comparisonData);
 		if ( this.action === 'not chart') {
 			this.sbsHandler(comparisonData);
 		} else {

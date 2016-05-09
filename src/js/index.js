@@ -42,4 +42,12 @@ render ((
 	), document.querySelector('.app')
 )
 
+
+// function functionName() {
+// 	if (Cookie) {
+// 		hashHistory.push('/home');
+// 	} else {
+// 		hash
+// 	}
+// }
 			
