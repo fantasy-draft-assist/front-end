@@ -60,6 +60,7 @@ export default class AccountSettings extends Component {
 			cache: false
 		}).then(response => {
 			//do something here
+			hasHistory.push('/home');
 		})
 	}
 

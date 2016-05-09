@@ -499,8 +499,21 @@ li {
 
 // ACCOUNT SETTINGS COMPONENT -- START
 
-.league-settings {
-	min-height: 424px;
+.account-settings {
+	background: gray;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 442px;
+	button {
+		background: $BruinsBlack;
+		border: 4px solid $BruinsYellow;
+		border-radius: 7px;
+		color: $BruinsYellow;
+		font-size: 30px;
+		width: 250px;
+		height: 80px;
+	}
 }
 
 // ACCOUNT SETTINGS COMPONENT -- END
@@ -512,7 +525,7 @@ li {
 // ABOUT COMPONENT -- START
 
 .about {
-	min-height: 424px;
+	min-height: 430px;
 }
 
 // ABOUT COMPONENT -- END

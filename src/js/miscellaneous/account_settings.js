@@ -8,11 +8,27 @@ import { ajax } from 'jquery';
 
 export default class LeagueSettings extends Component {
 
+	dataHandler(dataToDelete) {
+		let confirmMessage = confirm('Are you sure you want to delete your account with Hockey Doctor?');
+		if (confirmMessage === true) {
+			// ajax({
+			// 	url: GET FROM MITCH,
+			// 	type: 'DELETE',
+			// 	data: dataToDelete,
+			// 	dataType: 'json',
+			// 	cache: false
+			// }).then(response => {
+				hashHistory.push('/signup');
+			// })
+		}
+	}
 
 	render() {
 		return (
 			<div className="account-settings">
-				<p>Form Goes Here</p>
+				<SSF onData={this.dataHandler}>
+					<button>Delete Account</button>
+				</SSF>
 			</div>
 		)
 	}
