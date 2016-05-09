@@ -31,7 +31,7 @@ $YouTubeRed: #ee1c1b;
 }
 
 body {
-	background: #ffffff;
+	background: $BruinsYellow;
 }
 
 a {
@@ -439,31 +439,55 @@ li {
 // LEAGUE SETTINGS COMPONENT -- START
 
 .league-settings {
-	background: #ffffff;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 0px 40px 0px 40px;
+	font-size: 18px;
+	background: gray;
+	margin: 0px 200px 0px 200px;
 	min-height: 424px;
-	.teams-skaters-goalies {
-		margin: 10px auto 10px auto;
-		.tsg-options {
-			margin-left: 10px;
-			margin-right: 10px;
-		}
+	.league-top-text {
+		color: $BruinsBlack;
+		font-size: 25px;
+		font-weight: bold;
+		margin: auto;
+		padding: 25px 0px 25px 0px;
+		text-align: center;
+		width: 85%;
 	}
-	.stats {
-		display: flex;
-		justify-content: space-around;
-		align-items: flex-start;
-		margin: 10px auto 10px auto;
-	}
-	button {
+	.league-form-wrapper {
 		display: flex;
 		justify-content: center;
-		margin: 10px auto 10px auto;
-		width: 400px;
-		height: 50px;
+		align-items: center;
+		.stats {
+			display: flex;
+			justify-content: space-around;
+			align-items: flex-start;
+			margin: 10px auto 10px auto;
+			.skater-stats {
+				color: $BruinsBlack;
+				margin-right: 50px;
+			}
+			.goalie-stats {
+				color: $BruinsBlack;
+				margin-left: 50px;
+			}
+			.stats-header {
+				color: $BruinsYellow;
+				font-size: 30px;
+				text-decoration: underline;
+			}
+		}
+		button {
+			display: flex;
+			justify-content: center;
+			background: $BruinsYellow;
+			border: 5px solid $BruinsBlack;
+			border-radius: 5px;
+			color: $BruinsBlack;
+			font-size: 30px;
+			font-weight: bold;
+			margin: 10px auto 10px auto;
+			width: 300px;
+			height: 50px;
+		}
 	}
 }
 

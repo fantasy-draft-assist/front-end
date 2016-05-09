@@ -66,145 +66,142 @@ export default class AccountSettings extends Component {
 	render() {
 		return (
 			<div className="league-settings">
-				<SSF onData={this.dataHandler}>
-					<div className="teams-skaters-goalies">
-						<select className="tsg-options">
-							<option>Number of Teams in Your League</option>
-							{this.fillLeagueTeams()}
-						</select>
-						<select className="tsg-options">
-							<option>Skaters Per Fantasy Team</option>
-							{this.fillTeamSkaters()}
-						</select>
-						<select className="tsg-options">
-							<option>Goalies Per Fantasy Team</option>
-							{this.fillTeamGoalies()}
-						</select>
-					</div>
-					<div className="stats">
-						<div className="skater-stats">
-							Skater Stats
-							<br />
-							<input type="checkbox" name="goals" />
-							&nbsp;
-							Goals
-							<br />
-							<input type="checkbox" name="assists" />
-							&nbsp;
-							Assists
-							<br />
-							<input type="checkbox" name="points" />
-							&nbsp;
-							Points
-							<br />
-							<input type="checkbox" name="plus_minus" />
-							&nbsp;
-							Plus / Minus
-							<br />
-							<input type="checkbox" name="penalty_minutes" />
-							&nbsp;
-							Penalty Minutes
-							<br />
-							<input type="checkbox" name="powerplay_goals" />
-							&nbsp;
-							Powerlay Goals
-							<br />
-							<input type="checkbox" name="powerplay_assists" />
-							&nbsp;
-							Powerplay Assists
-							<br />
-							<input type="checkbox" name="powerplay_points" />
-							&nbsp;
-							Powerplay Points
-							<br />
-							<input type="checkbox" name="shorthanded_goals" />
-							&nbsp;
-							Shorthanded Goals
-							<br />
-							<input type="checkbox" name="shorthanded_assists" />
-							&nbsp;
-							Shorthanded Assists
-							<br />
-							<input type="checkbox" name="shorthanded_points" />
-							&nbsp;
-							Shorthanded Points
-							<br />
-							<input type="checkbox" name="game_winning_goals" />
-							&nbsp;
-							Game-Winning Goals
-							<br />
-							<input type="checkbox" name="shots_on_goal" />
-							&nbsp;
-							Shots On Goal
-							<br />
-							<input type="checkbox" name="shot_percentage" />
-							&nbsp;
-							Shot Percentage
-							<br />
-							<input type="checkbox" name="faceoffs_won" />
-							&nbsp;
-							Faceoffs Won
-							<br />
-							<input type="checkbox" name="faceoffs_lost" />
-							&nbsp;
-							Faceoffs Lost
+				<div className="league-top-text">
+					Select the scoring categories tracked by your fantasy league for more accurate player rankings and statistical information.
+				</div>
+				<div className="league-form-wrapper">
+					<SSF onData={this.dataHandler}>
+						<div className="stats">
+							<div className="skater-stats">
+								<span className="stats-header">
+									Skater Stats
+								</span>
+								<br />
+								<br />
+								<input type="checkbox" name="goals" />
+								&nbsp;
+								Goals
+								<br />
+								<input type="checkbox" name="assists" />
+								&nbsp;
+								Assists
+								<br />
+								<input type="checkbox" name="points" />
+								&nbsp;
+								Points
+								<br />
+								<input type="checkbox" name="plus_minus" />
+								&nbsp;
+								Plus / Minus
+								<br />
+								<input type="checkbox" name="penalty_minutes" />
+								&nbsp;
+								Penalty Minutes
+								<br />
+								<input type="checkbox" name="powerplay_goals" />
+								&nbsp;
+								Powerlay Goals
+								<br />
+								<input type="checkbox" name="powerplay_assists" />
+								&nbsp;
+								Powerplay Assists
+								<br />
+								<input type="checkbox" name="powerplay_points" />
+								&nbsp;
+								Powerplay Points
+								<br />
+								<input type="checkbox" name="shorthanded_goals" />
+								&nbsp;
+								Shorthanded Goals
+								<br />
+								<input type="checkbox" name="shorthanded_assists" />
+								&nbsp;
+								Shorthanded Assists
+								<br />
+								<input type="checkbox" name="shorthanded_points" />
+								&nbsp;
+								Shorthanded Points
+								<br />
+								<input type="checkbox" name="game_winning_goals" />
+								&nbsp;
+								Game-Winning Goals
+								<br />
+								<input type="checkbox" name="shots_on_goal" />
+								&nbsp;
+								Shots On Goal
+								<br />
+								<input type="checkbox" name="shot_percentage" />
+								&nbsp;
+								Shot Percentage
+								<br />
+								<input type="checkbox" name="faceoffs_won" />
+								&nbsp;
+								Faceoffs Won
+								<br />
+								<input type="checkbox" name="faceoffs_lost" />
+								&nbsp;
+								Faceoffs Lost
+							</div>
+							<div className="goalie-stats">
+								<span className="stats-header">
+									Goalie Stats
+								</span>
+								<br />
+								<br />
+								<input type="checkbox" name="games_started" />
+								&nbsp;
+								Games Started
+								<br />
+								<input type="checkbox" name="wins" />
+								&nbsp;
+								Wins
+								<br />
+								<input type="checkbox" name="losses" />
+								&nbsp;
+								Losses
+								<br />
+								<input type="checkbox" name="goals_against" />
+								&nbsp;
+								Goals Against
+								<br />
+								<input type="checkbox" name="goals_against_average" />
+								&nbsp;
+								Goals Against Average
+								<br />
+								<input type="checkbox" name="shots_against" />
+								&nbsp;
+								Shots Against
+								<br />
+								<input type="checkbox" name="saves" />
+								&nbsp;
+								Saves
+								<br />
+								<input type="checkbox" name="save_percentage" />
+								&nbsp;
+								Save Percentage
+								<br />
+								<input type="checkbox" name="shutouts" />
+								&nbsp;
+								Shutouts
+								<br />
+								<input type="checkbox" name="minutes_played" />
+								&nbsp;
+								Minutes Played
+								<br />
+								<input type="checkbox" name="hits" />
+								&nbsp;
+								Hits
+								<br />
+								<input type="checkbox" name="blocks" />
+								&nbsp;
+								Blocks
+							</div>
 						</div>
-						<div classname="goalie-stats">
-							Goalie Stats
-							<br />
-							<input type="checkbox" name="games_started" />
-							&nbsp;
-							Games Started
-							<br />
-							<input type="checkbox" name="wins" />
-							&nbsp;
-							Wins
-							<br />
-							<input type="checkbox" name="losses" />
-							&nbsp;
-							Losses
-							<br />
-							<input type="checkbox" name="goals_against" />
-							&nbsp;
-							Goals Against
-							<br />
-							<input type="checkbox" name="goals_against_average" />
-							&nbsp;
-							Goals Against Average
-							<br />
-							<input type="checkbox" name="shots_against" />
-							&nbsp;
-							Shots Against
-							<br />
-							<input type="checkbox" name="saves" />
-							&nbsp;
-							Saves
-							<br />
-							<input type="checkbox" name="save_percentage" />
-							&nbsp;
-							Save Percentage
-							<br />
-							<input type="checkbox" name="shutouts" />
-							&nbsp;
-							Shutouts
-							<br />
-							<input type="checkbox" name="minutes_played" />
-							&nbsp;
-							Minutes Played
-							<br />
-							<input type="checkbox" name="hits" />
-							&nbsp;
-							Hits
-							<br />
-							<input type="checkbox" name="blocks" />
-							&nbsp;
-							Blocks
+						<div>
+							<button>Save Settings</button>
 						</div>
-					</div>
-					<div>
-						<button>Save Settings</button>
-					</div>
-				</SSF>
+					</SSF>
+				</div>
 			</div>
 		)
 	}
