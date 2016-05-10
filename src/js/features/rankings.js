@@ -35,15 +35,35 @@ export default class Rankings extends Component {
 	getData() {
 		let data = this.state.hockeyPlayers;
 		if (this.state.filter) {
-			data = data.filter(hockeyPlayer => hockeyPlayer.positions[0] === this.state.filter || hockeyPlayer.positions[1] === this.state.filter || hockeyPlayer.positions[2] === this.state.filter);
+			data = data.filter(hockeyPlayer => hockeyPlayer.player.positions[0] === this.state.filter || hockeyPlayer.player.positions[1] === this.state.filter || hockeyPlayer.player.positions[2] === this.state.filter);
 		}
 		return data.map(hockeyPlayer => (
-			<tr key={hockeyPlayer.yahoo_player_id}>
+			<tr key={hockeyPlayer.yahoo_player_id} className="interpolated-table-rows">
 				<td>
 					<input type="checkbox" name="forComparison" value={hockeyPlayer.player.yahoo_player_id}></input>
+					&nbsp;
+					&nbsp;
+					<img src={hockeyPlayer.player.headshot_url} alt={`${hockeyPlayer.player.first_name} ${hockeyPlayer.player.last_name}`} title={`${hockeyPlayer.player.first_name} ${hockeyPlayer.player.last_name}`} />
 				</td>
 				<td>{hockeyPlayer.player.first_name} {hockeyPlayer.player.last_name}</td>
-				<td>{hockeyPlayer.player_stats.goals}</td>
+				<td>{`${hockeyPlayer.pro_team.abbreviation} - #${hockeyPlayer.player.uniform_number}`}</td>
+				<td className="50-pixels-wide">{hockeyPlayer.player_stats.goals}</td>
+				<td className="50-pixels-wide">{hockeyPlayer.player_stats.assists}</td>
+				<td className="50-pixels-wide">{hockeyPlayer.player_stats.points}</td>
+				<td className="50-pixels-wide">{hockeyPlayer.player_stats.powerplay_goals}</td>
+				<td className="50-pixels-wide">{hockeyPlayer.player_stats.powerplay_assists}</td>
+				<td className="50-pixels-wide">{hockeyPlayer.player_stats.powerplay_points}</td>
+				<td className="50-pixels-wide">{hockeyPlayer.player_stats.shorthanded_goals}</td>
+				<td className="50-pixels-wide">{hockeyPlayer.player_stats.shorthanded_assists}</td>
+				<td className="50-pixels-wide">{hockeyPlayer.player_stats.shorthanded_points}</td>
+				<td className="50-pixels-wide">{hockeyPlayer.player_stats.game_winning_goals}</td>
+				<td className="50-pixels-wide">{hockeyPlayer.player_stats.plus_minus}</td>
+				<td className="50-pixels-wide">{hockeyPlayer.player_stats.penalty_minutes}</td>
+				<td className="50-pixels-wide">{hockeyPlayer.player_stats.shots_on_goal}</td>
+				<td className="50-pixels-wide">{hockeyPlayer.player_stats.faceoffs_won}</td>
+				<td className="50-pixels-wide">{hockeyPlayer.player_stats.faceoffs_lost}</td>
+				<td className="50-pixels-wide">{hockeyPlayer.player_stats.hits}</td>
+				<td className="50-pixels-wide">{hockeyPlayer.player_stats.blocks}</td>
 			</tr>
 			)
 		)
@@ -105,8 +125,6 @@ export default class Rankings extends Component {
 						<option value="goals">Goals</option>
 						<option value="assists">Assists</option>
 						<option value="points">Points</option>
-						<option value="plus_minus">Plus / Minus</option>
-						<option value="penalty_minutes">Penalty Minutes</option>
 						<option value="powerplay_goals">Powerplay Goals</option>
 						<option value="powerplay_assists">Powerplay Assists</option>
 						<option value="powerplay_points">Powerplay Points</option>
@@ -114,9 +132,13 @@ export default class Rankings extends Component {
 						<option value="shorthanded_assists">Shorthanded Assists</option>
 						<option value="shorthanded_points">Shorthanded Points</option>
 						<option value="game_winning_goals">Game Winning Goals</option>
+						<option value="plus_minus">Plus / Minus</option>
+						<option value="penalty_minutes">Penalty Minutes</option>
 						<option value="shots_on_goal">Shots On Goal</option>
 						<option value="faceoffs_won">Faceoffs Won</option>
 						<option value="faceoffs_lost">Faceoffs Lost</option>
+						<option value="hits">Hits</option>
+						<option value="blocks">Blocks</option>
 						<option value="games_started">Games Started</option>
 						<option value="wins">Wins</option>
 						<option value="losses">Losses</option>
@@ -127,12 +149,10 @@ export default class Rankings extends Component {
 						<option value="save_percentage">Save Percentage</option>
 						<option value="shutouts">Shutouts</option>
 						<option value="minutes_played">Minutes Played</option>
-						<option value="hits">Hits</option>
-						<option value="blocks">Blocks</option>
 					</select>
 					<button>Apply the filter</button>
 				</SSF>
-				<SSF onData={::this.changeComponentHandler}>
+				<SSF onData={::this.changeComponentHandler} className="table-form">
 					<select onChange={::this.setFilter}>
 						<option>Sort Rankings By Position</option>
 						<option value=''>All Positions</option>
@@ -148,12 +168,24 @@ export default class Rankings extends Component {
 								<tr>
 									<th></th>
 									<th>Name</th>
-									<th>Goals</th>
-									<th></th>
-									<th></th>
-									<th></th>
-									<th></th>
-									<th></th>
+									<th>Team & Number</th>
+									<th className="50-pixels-wide" alt="Goals" title="Goals">G</th>
+									<th className="50-pixels-wide" alt="Assists" title="Assists">A</th>
+									<th className="50-pixels-wide" alt="Points" title="Points">P</th>
+									<th className="50-pixels-wide" alt="Powerplay Goals" title="Powerplay Goals">PPG</th>
+									<th className="50-pixels-wide" alt="Powerplay Assists" title="Powerplay Assists">PPA</th>
+									<th className="50-pixels-wide" alt="Points" title="Points">PPP</th>
+									<th className="50-pixels-wide" alt="Shorthanded Goals" title="Shorthanded Goals">SHG</th>
+									<th className="50-pixels-wide" alt="Shorthanded Assists" title="Shorthanded Assists">SHA</th>
+									<th className="50-pixels-wide" alt="Shorthanded Points" title="Shorthanded Points">SHP</th>
+									<th className="50-pixels-wide" alt="Game-Winning Goals" title="Game-Winning Goals">GWG</th>
+									<th className="50-pixels-wide" alt="Plus / Minus Differential" title="Plus / Minus Differential">+ / -</th>
+									<th className="50-pixels-wide" alt="Penalty Minutes" title="Penalty Minutes">PIM</th>
+									<th className="50-pixels-wide" alt="Shots On Goal" title="Shots On Goal">SOG</th>
+									<th className="50-pixels-wide" alt="Faceoffs Won" title="Faceoffs Won">FW</th>
+									<th className="50-pixels-wide" alt="Faceoffs Lost" title="Faceoffs Lost">FL</th>
+									<th className="50-pixels-wide" alt="Hits" title="Hits">Hits</th>
+									<th className="50-pixels-wide" alt="Blocks" title="Blocks">Blks</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -173,3 +205,21 @@ export default class Rankings extends Component {
 	}
 }
 
+// <th></th>
+// <th>Name</th>
+// <th>Goals</th>
+// <th>Assists</th>
+// <th>Points</th>
+// <th>Powerplay Points</th>
+// <th>Powerplay Assists</th>
+// <th>Powerplay Points</th>
+// <th>Shorthanded Goals</th>
+// <th>Shorthanded Assists</th>
+// <th>Shorthanded Points</th>
+// <th>Plus / Minus</th>
+// <th>Penalty Minutes</th>
+// <th>Shots On Goal</th>
+// <th>Faceoffs Won</th>
+// <th>Faceoffs Lost</th>
+// <th>Hits</th>
+// <th>Blocks</th>
