@@ -57,6 +57,7 @@ export default class Signup extends Component {
 			// to keep a user loged in for a week. The user is routed to the Home component.
 			console.log('signup response is', response);
 			Cookie.set('currentUser', response.user.auth_token, { expires: 7 });
+			Cookie.set('currentUserName', response.user.username, { expires: 7 });
 			ajaxSetup({
 				headers: { 'Internal': response.user.auth_token }
 			})

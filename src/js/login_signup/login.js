@@ -21,7 +21,8 @@ export default class Login extends Component {
 
 			//If the login is successful, the user is logged in and routed to the Home component.
 			console.log('login response', response);
-			Cookie.set('currentUser', response.user.auth_token, { expires: 7 })
+			Cookie.set('currentUser', response.user.auth_token, { expires: 7 });
+			Cookie.set('currentUserName', response.user.username, { expires: 7 });
 			ajaxSetup({
 				headers: { Intenral: response.user.auth_token }
 			})

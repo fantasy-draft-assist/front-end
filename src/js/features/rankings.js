@@ -54,8 +54,7 @@ export default class Rankings extends Component {
 		return data.map(hockeyPlayer => (
 			<li key={hockeyPlayer.yahoo_player_id}>
 				<input type="checkbox" name="forComparison" value={hockeyPlayer.yahoo_player_id}></input>
-				{hockeyPlayer.first_name}
-				{hockeyPlayer.last_name}
+				&nbsp;&nbsp;{hockeyPlayer.first_name} {hockeyPlayer.last_name}
 			</li>
 			)
 		)
