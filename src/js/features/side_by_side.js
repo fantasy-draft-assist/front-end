@@ -50,6 +50,7 @@ export default class SideBySide extends Component {
 		return twoPlayers.map(datum => (
 			<ul>
 				<li key={datum.player.yahoo_player_id}>{datum.player.first_name} {datum.player.last_name}</li>
+				<li><img src={datum.player.headshot_url} alt={`{datum.player.first_name} {datum.player.last_name}`} title={`${datum.player.first_name} ${datum.player.last_name}`}height="200" width="150" /></li>
 				<li>{datum.player.uniform_number}</li>
 				<li>{datum.player.positions}</li>
 				<li>{datum.stats[0].goals} Goals</li>
