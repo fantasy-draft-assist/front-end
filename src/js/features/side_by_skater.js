@@ -49,10 +49,10 @@ export default class SideBySkater extends Component {
 		// }
 		return twoPlayers.map(datum => (
 			<ul>
-				<li key={datum.player.yahoo_player_id}>{datum.player.first_name} {datum.player.last_name}</li>
 				<li><img src={datum.player.headshot_url} alt={`{datum.player.first_name} {datum.player.last_name}`} title={`${datum.player.first_name} ${datum.player.last_name}`}height="200" width="150" /></li>
+				<li key={datum.player.yahoo_player_id}>{datum.player.first_name} {datum.player.last_name}</li>
 				<li>{datum.player.uniform_number}</li>
-				<li>{datum.player.positions}</li>
+				<li>{datum.player.positions[0]} | {datum.player.positions[1]}</li>
 				<li>{datum.stats[0].goals} Goals</li>
 				<li>{datum.stats[0].assists} Assists</li>
 				<li>{datum.stats[0].points} Points</li>
@@ -62,26 +62,15 @@ export default class SideBySkater extends Component {
 				<li>{datum.stats[0].shorthanded_goals} Shorthanded Goals</li>
 				<li>{datum.stats[0].shorthanded_assists} Shorthanded Assists</li>
 				<li>{datum.stats[0].shorthanded_points} Shorthanded Points</li>
+				<li>{datum.stats[0].game_winning_goals} Game-Winning Goals</li>
+				<li>{datum.stats[0].plus_minus} Plus / Minus</li>
+				<li>{datum.stats[0].penalty_minutes} Penalty Minutes</li>
 				<li>{datum.stats[0].shots_on_goal} Shots On Goal</li>
-				<li>{datum.stats[0].shot_percentage} Shot Percentage</li>
-				<li>{datum.stats[0].blocks} Blocks</li>
 				<li>{datum.stats[0].faceoffs_won} Faceoffs Won</li>
 				<li>{datum.stats[0].faceoffs_lost} Faceoffs Lost</li>
-				<li>{datum.stats[0].game_winning_goals} Game-Winning Goals</li>
+				<li>{datum.stats[0].shot_percentage} Shot Percentage</li>
 				<li>{datum.stats[0].hits} Hits</li>
-				<li>{datum.stats[0].minutes_played} Minutes Played</li>
-				<li>{datum.stats[0].penalty_minutes} Penalty Minutes</li>
-				<li>{datum.stats[0].plus_minus} Plus / Minus</li>
-				<li>{datum.stats[0].games_played} Games Played</li>
-				<li>{datum.stats[0].games_started} Games Started</li>
-				<li>{datum.stats[0].wins} Wins</li>
-				<li>{datum.stats[0].losses} Losses</li>
-				<li>{datum.stats[0].goals_against} Goals Against</li>
-				<li>{datum.stats[0].goals_against_average} Goals Against Average</li>
-				<li>{datum.stats[0].saves} Saves</li>
-				<li>{datum.stats[0].save_percentage} Save Percentage</li>
-				<li>{datum.stats[0].shutouts} Shutouts</li>
-				<li>{datum.stats[0].shots_against} Shots Against</li>
+				<li>{datum.stats[0].blocks} Blocks</li>	
 			</ul>
 			)
 		)
@@ -90,13 +79,9 @@ export default class SideBySkater extends Component {
 	render() {
 		return(
 			<div className="side-by-skater">
-
-				<p>Side By Side Player Comparison</p>
-
-				
-					{this.getSBSPlayers()}
-				
-			
+				<div className="two-sides">
+					{::this.getSBSPlayers()}
+				</div>
 			</div>
 		)
 	}

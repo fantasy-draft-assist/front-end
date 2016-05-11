@@ -17,7 +17,7 @@ import RankingsGoalie from './features/rankings_goalie';
 import TimelineSkater from './features/timeline_skater';
 // import TimelineGoalie from './features/timeline_goalie';
 import SideBySkater from './features/side_by_skater';
-// import SideByGoalie from './features/side_by_goalie';
+import SideByGoalie from './features/side_by_goalie';
 import SearchResults from './features/search_results';
 import Privacy from './miscellaneous/privacy';
 import Legal from './miscellaneous/legal';
@@ -42,6 +42,7 @@ render ((
 				<Route path="/timeline_skater/:idA/:idB" component={ TimelineSkater } />
 				<Route path="/search_results/:param1/:param2/:param3" component={ SearchResults } />
 				<Route path="/side_by_skater/:idA/:idB" component={ SideBySkater } />
+				<Route path="/side_by_goalie/:idA/:idB" component={ SideByGoalie } />
 			</Route>
 		</Route>
 	</Router>
@@ -49,5 +50,4 @@ render ((
 )
 
 
-// <Route path="/side_by_goalie" component={ SideByGoalie } />
 // <Route path="/timeline_goalie" component={ TimelineGoalie } />

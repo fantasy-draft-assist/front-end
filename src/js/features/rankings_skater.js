@@ -74,7 +74,7 @@ export default class RankingsSkater extends Component {
 	sbsHandler(comparisonData) {
 		console.log('At sbsHandler =>', comparisonData)
 		console.log(comparisonData)
-		hashHistory.push(`/side_by_side/${comparisonData.forComparison[0]}/${comparisonData.forComparison[1]}`);
+		hashHistory.push(`/side_by_skater/${comparisonData.forComparison[0]}/${comparisonData.forComparison[1]}`);
 	}
 
 

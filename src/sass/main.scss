@@ -569,6 +569,16 @@ li {
 // SIDE BY SKATER COMPONENT -- START
 
 .side-by-skater {
+	.two-sides {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		ul {
+			margin: 40px;
+			li {
+			}
+		}
+	}
 	min-height: 424px;
 }
 
@@ -581,6 +591,16 @@ li {
 // SIDE BY GOALIE COMPONENT -- START
 
 .side-by-goalie {
+	.two-sides {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		ul {
+			margin: 40px;
+			li {
+			}
+		}
+	}
 	min-height: 424px;
 }
 

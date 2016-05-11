@@ -67,7 +67,7 @@ export default class RankingsGoalie extends Component {
 	sbsHandler(comparisonData) {
 		console.log('At sbsHandler =>', comparisonData)
 		console.log(comparisonData)
-		hashHistory.push(`/side_by_side/${comparisonData.forComparison[0]}/${comparisonData.forComparison[1]}`);
+		hashHistory.push(`/side_by_goalie/${comparisonData.forComparison[0]}/${comparisonData.forComparison[1]}`);
 	}
 
 
