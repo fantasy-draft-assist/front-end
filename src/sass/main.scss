@@ -421,6 +421,18 @@ li {
 
 .home {
 	min-height: 410px;
+	.message {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		p {
+			color: $LightningBlue;
+			font-family: 'Shadows Into Light', cursive;
+			font-size: 100px;
+			margin: 60px;
+		}
+	}
 }
 
 // HOME COMPONENT -- END

@@ -13,7 +13,7 @@ export default class RankingsSkater extends Component {
 	constructor(...args) {
 		super(...args);
 
-		this.state = { hockeyPlayers: [], filter: null };
+		this.state = { hockeyPlayers: [], filter: null, settings: {} };
 	}
 
 	// When the component mounts
@@ -25,6 +25,13 @@ export default class RankingsSkater extends Component {
 			console.log('Hockey Players I Got Back =>',hockeyPlayers);
 			// console.log('Mitch test =>', hockeyPlayers[0].pro_player[0].player_stat)
 			this.setState( {hockeyPlayers} );
+		});
+
+		ajax({
+			url: 'https://hockeydoctor.herokuapp.com/settings',
+			headers: { Internal: Cookie.get('currentUser') }
+			}).then((settings) => {
+			this.setState( {settings} );
 		});
 	}
 
@@ -47,7 +54,12 @@ export default class RankingsSkater extends Component {
 				</td>
 				<td>{hockeyPlayer.player.first_name} {hockeyPlayer.player.last_name}</td>
 				<td>{`${hockeyPlayer.pro_team.abbreviation} - #${hockeyPlayer.player.uniform_number}`}</td>
-				<td className="50-pixels-wide">{hockeyPlayer.player_stats.goals}</td>
+				
+				{settings.map(setting => {
+					<td className="50-pixels-wide">{hockeyPlayer.player_stats[setting]}</td>
+				})}
+
+				{/*<td className="50-pixels-wide">{hockeyPlayer.player_stats.goals}</td>
 				<td className="50-pixels-wide">{hockeyPlayer.player_stats.assists}</td>
 				<td className="50-pixels-wide">{hockeyPlayer.player_stats.points}</td>
 				<td className="50-pixels-wide">{hockeyPlayer.player_stats.powerplay_goals}</td>
@@ -63,7 +75,7 @@ export default class RankingsSkater extends Component {
 				<td className="50-pixels-wide">{hockeyPlayer.player_stats.faceoffs_won}</td>
 				<td className="50-pixels-wide">{hockeyPlayer.player_stats.faceoffs_lost}</td>
 				<td className="50-pixels-wide">{hockeyPlayer.player_stats.hits}</td>
-				<td className="50-pixels-wide">{hockeyPlayer.player_stats.blocks}</td>
+				<td className="50-pixels-wide">{hockeyPlayer.player_stats.blocks}</td>*/}
 			</tr>
 			)
 		)
@@ -109,6 +121,13 @@ export default class RankingsSkater extends Component {
 	}
 
 	render() {
+
+		// array od setting names we want.
+		let settings = Object.keys(this.state.settings)
+			.filter(setting => this.state.settings[setting])
+			.filter(setting => this.state.hockeyPlayers[0].player_stats[setting])
+
+
 		return (
 			<div className="rankings-skater">
 				<SSF onData={::this.stateUpdateHandler}>
@@ -158,7 +177,13 @@ export default class RankingsSkater extends Component {
 									<th></th>
 									<th>Name</th>
 									<th>Team & Number</th>
-									<th className="50-pixels-wide" alt="Goals" title="Goals">G</th>
+
+									{settings.map(setting => {
+										name = setting.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+										<th className="50-pixels-wide" alt={name} title={name}>{name}</th>
+									})}
+
+									{/*<th className="50-pixels-wide" alt="Goals" title="Goals">G</th>
 									<th className="50-pixels-wide" alt="Assists" title="Assists">A</th>
 									<th className="50-pixels-wide" alt="Points" title="Points">P</th>
 									<th className="50-pixels-wide" alt="Powerplay Goals" title="Powerplay Goals">PPG</th>
@@ -174,7 +199,7 @@ export default class RankingsSkater extends Component {
 									<th className="50-pixels-wide" alt="Faceoffs Won" title="Faceoffs Won">FW</th>
 									<th className="50-pixels-wide" alt="Faceoffs Lost" title="Faceoffs Lost">FL</th>
 									<th className="50-pixels-wide" alt="Hits" title="Hits">Hits</th>
-									<th className="50-pixels-wide" alt="Blocks" title="Blocks">Blks</th>
+									<th className="50-pixels-wide" alt="Blocks" title="Blocks">Blks</th>*/}
 								</tr>
 							</thead>
 							<tbody>

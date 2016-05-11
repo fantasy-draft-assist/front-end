@@ -52,14 +52,53 @@ export default class AccountSettings extends Component {
 	}
 
 	dataHandler(accountSettingsData) {
+		console.log('league-settings', accountSettingsData);
+
+		var allSettings = {
+			goals: false,
+			assists: false,
+			points: false,
+			plus_minus: false,
+			penalty_minutes: false,
+			powerplay_goals: false,
+			powerplay_assists: false,
+			powerplay_points: false,
+			shorthanded_goals: false,
+			shorthanded_assists: false,
+			shorthanded_points: false,
+			game_winning_goals: false,
+			shots_on_goal: false,
+			shot_percentage: false,
+			faceoffs_won: false,
+			faceoffs_lost: false,
+			games_started: false,
+			wins: false,
+			losses: false,
+			goals_against: false,
+			goals_against_average: false,
+			shots_against: false,
+			saves: false,
+			save_percentage: false,
+			shutouts: false,
+			minutes_played: false,
+			hits: false,
+			blocks: false
+		}
+
+		Object.keys(allSettings).forEach(setting => {
+			if (accountSettingsData[setting]) {
+				allSettings[setting] = true;
+			} 
+		}
+
 		ajax({
-			url: '',
+			url: 'https://hockeydoctor.herokuapp.com/settings',
 			type: 'PUT',
-			data: accountSettingsData,
+			data: allSettings,
 			dataType: 'json',
 			cache: false
 		}).then(response => {
-			//do something here
+			// do something here
 			hasHistory.push('/home');
 		})
 	}
@@ -79,69 +118,76 @@ export default class AccountSettings extends Component {
 								</span>
 								<br />
 								<br />
-								<input type="checkbox" name="goals" />
+								<input type="checkbox" defaultChecked="true" name="goals" />
 								&nbsp;
 								Goals
 								<br />
-								<input type="checkbox" name="assists" />
+								<input type="checkbox" defaultChecked="true" name="assists" />
 								&nbsp;
 								Assists
 								<br />
-								<input type="checkbox" name="points" />
+								<input type="checkbox" defaultChecked="true" name="points" />
 								&nbsp;
 								Points
 								<br />
-								<input type="checkbox" name="plus_minus" />
+								<input type="checkbox" defaultChecked="true" name="plus_minus" />
 								&nbsp;
 								Plus / Minus
 								<br />
-								<input type="checkbox" name="penalty_minutes" />
+								<input type="checkbox" defaultChecked="true" name="penalty_minutes" />
 								&nbsp;
 								Penalty Minutes
 								<br />
-								<input type="checkbox" name="powerplay_goals" />
+								<input type="checkbox" defaultChecked="true" name="powerplay_goals" />
 								&nbsp;
 								Powerlay Goals
 								<br />
-								<input type="checkbox" name="powerplay_assists" />
+								<input type="checkbox" defaultChecked="true" name="powerplay_assists" />
 								&nbsp;
 								Powerplay Assists
 								<br />
-								<input type="checkbox" name="powerplay_points" />
+								<input type="checkbox" defaultChecked="true" name="powerplay_points" />
 								&nbsp;
 								Powerplay Points
 								<br />
-								<input type="checkbox" name="shorthanded_goals" />
+								<input type="checkbox" defaultChecked="true" name="shorthanded_goals" />
 								&nbsp;
 								Shorthanded Goals
 								<br />
-								<input type="checkbox" name="shorthanded_assists" />
+								<input type="checkbox" defaultChecked="true" name="shorthanded_assists" />
 								&nbsp;
 								Shorthanded Assists
 								<br />
-								<input type="checkbox" name="shorthanded_points" />
+								<input type="checkbox" defaultChecked="true" name="shorthanded_points" />
 								&nbsp;
 								Shorthanded Points
 								<br />
-								<input type="checkbox" name="game_winning_goals" />
+								<input type="checkbox" defaultChecked="true" name="game_winning_goals" />
 								&nbsp;
 								Game-Winning Goals
 								<br />
-								<input type="checkbox" name="shots_on_goal" />
+								<input type="checkbox" defaultChecked="true" name="shots_on_goal" />
 								&nbsp;
 								Shots On Goal
 								<br />
-								<input type="checkbox" name="shot_percentage" />
+								<input type="checkbox" defaultChecked="true" name="shot_percentage" />
 								&nbsp;
 								Shot Percentage
 								<br />
-								<input type="checkbox" name="faceoffs_won" />
+								<input type="checkbox" defaultChecked="true" name="faceoffs_won" />
 								&nbsp;
 								Faceoffs Won
 								<br />
-								<input type="checkbox" name="faceoffs_lost" />
+								<input type="checkbox" defaultChecked="true" name="faceoffs_lost" />
 								&nbsp;
 								Faceoffs Lost
+								<input type="checkbox" defaultChecked="true" name="hits" />
+								&nbsp;
+								Hits
+								<br />
+								<input type="checkbox" defaultChecked="true" name="blocks" />
+								&nbsp;
+								Blocks
 							</div>
 							<div className="goalie-stats">
 								<span className="stats-header">
@@ -149,53 +195,46 @@ export default class AccountSettings extends Component {
 								</span>
 								<br />
 								<br />
-								<input type="checkbox" name="games_started" />
+								<input type="checkbox" defaultChecked="true" name="games_started" />
 								&nbsp;
 								Games Started
 								<br />
-								<input type="checkbox" name="wins" />
+								<input type="checkbox" defaultChecked="true" name="wins" />
 								&nbsp;
 								Wins
 								<br />
-								<input type="checkbox" name="losses" />
+								<input type="checkbox" defaultChecked="true" name="losses" />
 								&nbsp;
 								Losses
 								<br />
-								<input type="checkbox" name="goals_against" />
+								<input type="checkbox" defaultChecked="true" name="goals_against" />
 								&nbsp;
 								Goals Against
 								<br />
-								<input type="checkbox" name="goals_against_average" />
+								<input type="checkbox" defaultChecked="true" name="goals_against_average" />
 								&nbsp;
 								Goals Against Average
 								<br />
-								<input type="checkbox" name="shots_against" />
+								<input type="checkbox" defaultChecked="true" name="shots_against" />
 								&nbsp;
 								Shots Against
 								<br />
-								<input type="checkbox" name="saves" />
+								<input type="checkbox" defaultChecked="true" name="saves" />
 								&nbsp;
 								Saves
 								<br />
-								<input type="checkbox" name="save_percentage" />
+								<input type="checkbox" defaultChecked="true" name="save_percentage" />
 								&nbsp;
 								Save Percentage
 								<br />
-								<input type="checkbox" name="shutouts" />
+								<input type="checkbox" defaultChecked="true" name="shutouts" />
 								&nbsp;
 								Shutouts
 								<br />
-								<input type="checkbox" name="minutes_played" />
+								<input type="checkbox" defaultChecked="true" name="minutes_played" />
 								&nbsp;
 								Minutes Played
 								<br />
-								<input type="checkbox" name="hits" />
-								&nbsp;
-								Hits
-								<br />
-								<input type="checkbox" name="blocks" />
-								&nbsp;
-								Blocks
 							</div>
 						</div>
 						<div>
