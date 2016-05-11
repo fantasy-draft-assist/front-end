@@ -41,6 +41,7 @@ export default class RankingsSkater extends Component {
 
 	getData() {
 		let data = this.state.hockeyPlayers;
+		let settings = this.getSettings();
 		if (this.state.filter) {
 			data = data.filter(hockeyPlayer => hockeyPlayer.player.positions[0] === this.state.filter || hockeyPlayer.player.positions[1] === this.state.filter || hockeyPlayer.player.positions[2] === this.state.filter);
 		}
@@ -55,9 +56,9 @@ export default class RankingsSkater extends Component {
 				<td>{hockeyPlayer.player.first_name} {hockeyPlayer.player.last_name}</td>
 				<td>{`${hockeyPlayer.pro_team.abbreviation} - #${hockeyPlayer.player.uniform_number}`}</td>
 				
-				{settings.map(setting => {
-					<td className="50-pixels-wide">{hockeyPlayer.player_stats[setting]}</td>
-				})}
+				{settings.map(setting => (
+					<td key={setting} className="50-pixels-wide">{hockeyPlayer.player_stats[setting]}</td>
+				))}
 
 				{/*<td className="50-pixels-wide">{hockeyPlayer.player_stats.goals}</td>
 				<td className="50-pixels-wide">{hockeyPlayer.player_stats.assists}</td>
@@ -120,12 +121,23 @@ export default class RankingsSkater extends Component {
 		)
 	}
 
-	render() {
+	getSettings() {
+		// just grab first player to check for null values
+		let firstPlayer = this.state.hockeyPlayers[0];
 
 		// array od setting names we want.
 		let settings = Object.keys(this.state.settings)
 			.filter(setting => this.state.settings[setting])
-			.filter(setting => this.state.hockeyPlayers[0].player_stats[setting])
+			.filter(setting => firstPlayer && firstPlayer.player_stats[setting]);
+
+		console.log('settings', settings);
+
+		return settings;
+	}
+
+	render() {
+
+		let settings = this.getSettings();
 
 
 		return (
@@ -180,7 +192,7 @@ export default class RankingsSkater extends Component {
 
 									{settings.map(setting => {
 										name = setting.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-										<th className="50-pixels-wide" alt={name} title={name}>{name}</th>
+										return <th key={setting} className="50-pixels-wide" alt={name} title={name}>{name}</th>
 									})}
 
 									{/*<th className="50-pixels-wide" alt="Goals" title="Goals">G</th>

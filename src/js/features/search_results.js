@@ -11,7 +11,7 @@ export default class SearchResults extends Component {
 	}
 
 	componentWillMount() {
-		let { param1, param2, param3 } = this.props.params;
+		let { param1, param2 } = this.props.params;
 		ajax({
 			headers: {Internal: Cookie.get('currentUser')},
 			url: `https://hockeydoctor.herokuapp.com/players/search?${param1}=${param2}`,

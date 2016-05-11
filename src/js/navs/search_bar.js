@@ -7,12 +7,12 @@ export default class SearchBar extends Component {
 
 	firstNameHandler(searchString) {
 		console.log('At dataHandler, the searchString is =>', searchString);
-		hashHistory.push(`/search_results/${searchString.firstOrLast}/${searchString.firstName}/${searchString.thirdParam}`);
+		hashHistory.push(`/search_results/${searchString.firstOrLast}/${searchString.firstName}`);
 	}
 
 	lastNameHandler(searchString) {
 		console.log('At dataHandler, the searchString is =>', searchString);
-		hashHistory.push(`/search_results/${searchString.firstOrLast}/${searchString.lastName}/${searchString.thirdParam}`);
+		hashHistory.push(`/search_results/${searchString.firstOrLast}/${searchString.lastName}`);
 	}
 
 	dataHandler() {

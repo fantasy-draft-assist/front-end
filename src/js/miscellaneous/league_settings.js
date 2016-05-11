@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import { hashHistory } from 'react-router';
 import SSF from 'react-simple-serial-form';
 import { ajax } from 'jquery';
+import Cookie from 'js-cookie';
 
 export default class AccountSettings extends Component {
 
@@ -89,17 +90,22 @@ export default class AccountSettings extends Component {
 			if (accountSettingsData[setting]) {
 				allSettings[setting] = true;
 			} 
-		}
+		});
+
+		console.log('allSettings', allSettings);
+
+		console.log('user', Cookie.get('currentUser'));
 
 		ajax({
 			url: 'https://hockeydoctor.herokuapp.com/settings',
+			headers: { Internal: Cookie.get('currentUser') },
 			type: 'PUT',
 			data: allSettings,
 			dataType: 'json',
 			cache: false
 		}).then(response => {
 			// do something here
-			hasHistory.push('/home');
+			hashHistory.push('/home');
 		})
 	}
 
