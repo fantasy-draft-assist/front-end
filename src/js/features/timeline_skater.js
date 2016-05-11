@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 import { ajax } from 'jquery';
 import Chart from 'chart.js';
 
-export default class Timeline extends Component {
+export default class TimelineSkater extends Component {
 
 	// constructor(...args) {
 	// 	super(...args);
@@ -27,7 +27,7 @@ export default class Timeline extends Component {
 
 	render() {
 		return (
-			<div className="timeline">
+			<div className="timeline-skater">
 
 				<p>Player Timeline Graph</p>
 				<canvas id="timelineChart" width="600" height="600">

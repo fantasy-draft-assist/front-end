@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { ajax } from 'jquery';
 import Cookie from 'js-cookie';
 
-export default class SideBySide extends Component {
+export default class SideBySkater extends Component {
 
 	constructor(...args) {
 		super(...args);
@@ -89,7 +89,7 @@ export default class SideBySide extends Component {
 	
 	render() {
 		return(
-			<div className="side-by-side">
+			<div className="side-by-skater">
 
 				<p>Side By Side Player Comparison</p>
 

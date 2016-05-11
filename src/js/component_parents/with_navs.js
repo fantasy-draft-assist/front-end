@@ -3,6 +3,7 @@
 import React, { Component, PropTypes} from 'react';
 
 import TopNav from '../navs/top_nav';
+import SearchBar from '../navs/search_bar';
 import BottomNav from '../navs/bottom_nav';
 
 export default class WithNavs extends Component {
@@ -11,6 +12,7 @@ export default class WithNavs extends Component {
 		return (
 			<div className="with-navs">
 				<TopNav />
+				<SearchBar />
 				{this.props.children}
 				<BottomNav />
 			</div>

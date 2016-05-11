@@ -8,7 +8,7 @@ import SSF from 'react-simple-serial-form';
 import { hashHistory } from 'react-router';
 import Cookie from 'js-cookie';
 
-export default class Rankings extends Component {
+export default class RankingsSkater extends Component {
 
 	constructor(...args) {
 		super(...args);
@@ -110,7 +110,7 @@ export default class Rankings extends Component {
 
 	render() {
 		return (
-			<div className="rankings">
+			<div className="rankings-skater">
 				<p>Player Rankings</p>
 				<SSF onData={::this.stateUpdateHandler}>
 					<select name="year">

@@ -12,9 +12,13 @@ import About from './miscellaneous/about';
 import LeagueSettings from './miscellaneous/league_settings';
 import AccountSettings from './miscellaneous/account_settings';
 import MockDraft from './features/mock_draft';
-import Rankings from './features/rankings';
-import Timeline from './features/timeline';
-import SideBySide from './features/side_by_side';
+import RankingsSkater from './features/rankings_skater';
+// import RankingsGoalie from './features/rankings_goalie';
+import TimelineSkater from './features/timeline_skater';
+// import TimelineGoalie from './features/timeline_goalie';
+import SideBySkater from './features/side_by_skater';
+// import SideByGoalie from './features/side_by_goalie';
+import SearchResults from './features/search_results';
 import Privacy from './miscellaneous/privacy';
 import Legal from './miscellaneous/legal';
 
@@ -33,21 +37,17 @@ render ((
 				<Route path="/privacy" component={ Privacy } />
 				<Route path="/legal" component={ Legal } />
 				<Route path="/mock_draft" component={ MockDraft } />
-				<Route path="/rankings" component={ Rankings } />
-				<Route path="/timeline/:idA/:idB" component={ Timeline } />
-				<Route path="/side_by_side/:idA/:idB" component={ SideBySide } />
+				<Route path="/rankings_skater" component={ RankingsSkater } />
+				<Route path="/timeline_skater/:idA/:idB" component={ TimelineSkater } />
+				<Route path="/search_results/:param1/:param2/:param3" component={ SearchResults } />
+				<Route path="/side_by_skater/:idA/:idB" component={ SideBySkater } />
 			</Route>
 		</Route>
 	</Router>
 	), document.querySelector('.app')
 )
 
-
-// function functionName() {
-// 	if (Cookie) {
-// 		hashHistory.push('/home');
-// 	} else {
-// 		hash
-// 	}
-// }
-			
+// <Route path="/rankings_goalie" component={ RankingsGoalie } />
+// <Route path="/side_by_goalie" component={ SideByGoalie } />
+// <Route path="/timeline_goalie" component={ TimelineGoalie } />
+// <Route path="/search_results" component={ SearchResults } />
