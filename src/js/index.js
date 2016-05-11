@@ -13,7 +13,7 @@ import LeagueSettings from './miscellaneous/league_settings';
 import AccountSettings from './miscellaneous/account_settings';
 import MockDraft from './features/mock_draft';
 import RankingsSkater from './features/rankings_skater';
-// import RankingsGoalie from './features/rankings_goalie';
+import RankingsGoalie from './features/rankings_goalie';
 import TimelineSkater from './features/timeline_skater';
 // import TimelineGoalie from './features/timeline_goalie';
 import SideBySkater from './features/side_by_skater';
@@ -38,6 +38,7 @@ render ((
 				<Route path="/legal" component={ Legal } />
 				<Route path="/mock_draft" component={ MockDraft } />
 				<Route path="/rankings_skater" component={ RankingsSkater } />
+				<Route path="/rankings_goalie" component={ RankingsGoalie } />
 				<Route path="/timeline_skater/:idA/:idB" component={ TimelineSkater } />
 				<Route path="/search_results/:param1/:param2/:param3" component={ SearchResults } />
 				<Route path="/side_by_skater/:idA/:idB" component={ SideBySkater } />
@@ -47,7 +48,6 @@ render ((
 	), document.querySelector('.app')
 )
 
-// <Route path="/rankings_goalie" component={ RankingsGoalie } />
+
 // <Route path="/side_by_goalie" component={ SideByGoalie } />
 // <Route path="/timeline_goalie" component={ TimelineGoalie } />
-// <Route path="/search_results" component={ SearchResults } />

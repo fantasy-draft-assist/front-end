@@ -250,7 +250,7 @@ li {
 			.top-links-li {
 				color: $LightningWhite;
 				display: inline-block;
-				font-size: 30px;
+				font-size: 25px;
 				&:hover {
 					color: $LightningGrey;
 				}
@@ -475,7 +475,6 @@ li {
 					padding-left: 14px;
 					padding-right: 14px;
 					input {
-						transform: scale(1.5);
 						padding-bottom: 20px;
 					}
 				}
@@ -494,6 +493,35 @@ li {
 
 .rankings-goalie {
 	min-height: 424px;
+	.table-form {
+		display: block;
+		text-align: center;
+		table {
+			thead {
+				tr {
+					th {
+					}
+				}
+			}
+			margin: auto;
+			.interpolated-table-rows {
+				background: $LightningWhite;
+				&:hover {
+					background: $LightningGrey;
+					color: $LightningBlue;
+					font-weight: bold;
+				}
+				td {
+					border: 1px solid black;
+					padding-left: 14px;
+					padding-right: 14px;
+					input {
+						padding-bottom: 20px;
+					}
+				}
+			}
+		}
+	}
 }
 
 // RANKINGS GOALIE COMPONENT -- END

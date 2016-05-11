@@ -111,7 +111,6 @@ export default class RankingsSkater extends Component {
 	render() {
 		return (
 			<div className="rankings-skater">
-				<p>Player Rankings</p>
 				<SSF onData={::this.stateUpdateHandler}>
 					<select name="year">
 						<option>Pick a Season</option>
@@ -139,18 +138,8 @@ export default class RankingsSkater extends Component {
 						<option value="faceoffs_lost">Faceoffs Lost</option>
 						<option value="hits">Hits</option>
 						<option value="blocks">Blocks</option>
-						<option value="games_started">Games Started</option>
-						<option value="wins">Wins</option>
-						<option value="losses">Losses</option>
-						<option value="goals_against">Goals Against</option>
-						<option value="goals_against_average">Goals Against Average</option>
-						<option value="shots_against">Shots Against</option>
-						<option value="saves">Saves</option>
-						<option value="save_percentage">Save Percentage</option>
-						<option value="shutouts">Shutouts</option>
-						<option value="minutes_played">Minutes Played</option>
 					</select>
-					<button>Apply the filter</button>
+					<button>Check It Out</button>
 				</SSF>
 				<SSF onData={::this.changeComponentHandler} className="table-form">
 					<select onChange={::this.setFilter}>
@@ -204,22 +193,3 @@ export default class RankingsSkater extends Component {
 		)
 	}
 }
-
-// <th></th>
-// <th>Name</th>
-// <th>Goals</th>
-// <th>Assists</th>
-// <th>Points</th>
-// <th>Powerplay Points</th>
-// <th>Powerplay Assists</th>
-// <th>Powerplay Points</th>
-// <th>Shorthanded Goals</th>
-// <th>Shorthanded Assists</th>
-// <th>Shorthanded Points</th>
-// <th>Plus / Minus</th>
-// <th>Penalty Minutes</th>
-// <th>Shots On Goal</th>
-// <th>Faceoffs Won</th>
-// <th>Faceoffs Lost</th>
-// <th>Hits</th>
-// <th>Blocks</th>
