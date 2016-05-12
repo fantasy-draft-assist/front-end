@@ -274,12 +274,13 @@ li {
 	align-items: center;
 	background: $LightningWhite;
 	width: 100%;
-	height: 50px;
+	height: 60px;
 	.form-container {
 		display: flex;
 		justify-content: flex-end;
 		align-items: center;
 		form {
+			background: $LightningBlue;
 			border: 4px solid $LightningBlue;
 			border-radius: 7px;
 			margin-left: 8px;
@@ -292,21 +293,22 @@ li {
 				border-bottom: none;
 				color: $LightningBlue;
 				font-family: 'Shadows Into Light', cursive;
-				font-size: 20px;
-				height: 30px;
+				font-size: 25px;
+				font-weight: bold;
+				height: 40px;
 				padding-left: 10px;
 				width: 240px;
-				&.hide-this {
-					display: none;
-				}
 			}
 			button {
-				background: $LightningWhite;
+				background: $LightningBlue;
 				border: none;
-				color: $LightningBlue;
-				font-size: 20px;
+				color: $LightningWhite;
+				font-size: 30px;
 				font-weight: bold;
-				height: 27px;
+				height: 37px;
+				&:hover {
+					color: $LightningGrey;
+				}
 			}
 		}
 	}
@@ -447,10 +449,11 @@ li {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: $LightningGrey;
+	color: $LightningBlue;
 	min-height: 442px;
 	div {
-		font-size: 80px;
+		font-family: 'Shadows Into Light', cursive;
+		font-size: 200px;
 	}
 }
 
@@ -688,7 +691,7 @@ li {
 // ACCOUNT SETTINGS COMPONENT -- START
 
 .account-settings {
-	background: $LightningGrey;
+	// background: $LightningGrey;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -713,14 +716,13 @@ li {
 // ABOUT COMPONENT -- START
 
 .about {
-	background: $LightningGrey;
 	color: $LightningBlue;
 	min-height: 430px;
 	width: 50%;
 	padding: 20px 0px 20px 0px;
 	margin:  auto;
 	h3 {
-		color: $LightningWhite;
+		color: $LightningBlue;
 		font-family: 'Shadows Into Light', cursive;
 		font-size: 50px;
 		text-align: center;
@@ -739,14 +741,13 @@ li {
 // PRIVACY COMPONENT -- START
 
 .privacy {
-	background: $LightningGrey;
 	color: $LightningBlue;
 	min-height: 430px;
 	width: 50%;
 	padding: 20px 0px 20px 0px;
 	margin:  auto;
 	h3 {
-		color: $LightningWhite;
+		color: $LightningBlue;
 		font-family: 'Shadows Into Light', cursive;
 		font-size: 50px;
 		text-align: center;
@@ -766,14 +767,13 @@ li {
 // LEAGL COMPONENT -- START
 
 .legal {
-	background: $LightningGrey;
 	color: $LightningBlue;
 	min-height: 430px;
 	width: 50%;
 	padding: 20px 0px 20px 0px;
 	margin:  auto;
 	h3 {
-		color: $LightningWhite;
+		color: $LightningBlue;
 		font-family: 'Shadows Into Light', cursive;
 		font-size: 50px;
 		text-align: center;

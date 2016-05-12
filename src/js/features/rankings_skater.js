@@ -59,24 +59,6 @@ export default class RankingsSkater extends Component {
 				{settings.map(setting => (
 					<td key={setting} className="50-pixels-wide">{hockeyPlayer.player_stats[setting]}</td>
 				))}
-
-				{/*<td className="50-pixels-wide">{hockeyPlayer.player_stats.goals}</td>
-				<td className="50-pixels-wide">{hockeyPlayer.player_stats.assists}</td>
-				<td className="50-pixels-wide">{hockeyPlayer.player_stats.points}</td>
-				<td className="50-pixels-wide">{hockeyPlayer.player_stats.powerplay_goals}</td>
-				<td className="50-pixels-wide">{hockeyPlayer.player_stats.powerplay_assists}</td>
-				<td className="50-pixels-wide">{hockeyPlayer.player_stats.powerplay_points}</td>
-				<td className="50-pixels-wide">{hockeyPlayer.player_stats.shorthanded_goals}</td>
-				<td className="50-pixels-wide">{hockeyPlayer.player_stats.shorthanded_assists}</td>
-				<td className="50-pixels-wide">{hockeyPlayer.player_stats.shorthanded_points}</td>
-				<td className="50-pixels-wide">{hockeyPlayer.player_stats.game_winning_goals}</td>
-				<td className="50-pixels-wide">{hockeyPlayer.player_stats.plus_minus}</td>
-				<td className="50-pixels-wide">{hockeyPlayer.player_stats.penalty_minutes}</td>
-				<td className="50-pixels-wide">{hockeyPlayer.player_stats.shots_on_goal}</td>
-				<td className="50-pixels-wide">{hockeyPlayer.player_stats.faceoffs_won}</td>
-				<td className="50-pixels-wide">{hockeyPlayer.player_stats.faceoffs_lost}</td>
-				<td className="50-pixels-wide">{hockeyPlayer.player_stats.hits}</td>
-				<td className="50-pixels-wide">{hockeyPlayer.player_stats.blocks}</td>*/}
 			</tr>
 			)
 		)
@@ -145,10 +127,10 @@ export default class RankingsSkater extends Component {
 				<SSF onData={::this.stateUpdateHandler}>
 					<select name="year">
 						<option>Pick a Season</option>
-						<option value="2012">2012</option>
-						<option value="2013">2013</option>
-						<option value="2014">2014</option>
-						<option value="2015">2015</option>
+						<option value="2012">2012-13</option>
+						<option value="2013">2013-14</option>
+						<option value="2014">2014-15</option>
+						<option value="2015">2015-16</option>
 					</select>
 					<select name="stat">
 						<option>Choose a Scoring Category</option>
@@ -180,7 +162,6 @@ export default class RankingsSkater extends Component {
 						<option value='RW'>Right Wing</option>
 						<option value='C'>Center</option>
 						<option value='D'>Defenseman</option>
-						<option value='G'>Goalie</option>
 					</select>
 					<div className="player-rankings">
 						<table>
@@ -194,24 +175,6 @@ export default class RankingsSkater extends Component {
 										name = setting.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 										return <th key={setting} className="50-pixels-wide" alt={name} title={name}>{name}</th>
 									})}
-
-									{/*<th className="50-pixels-wide" alt="Goals" title="Goals">G</th>
-									<th className="50-pixels-wide" alt="Assists" title="Assists">A</th>
-									<th className="50-pixels-wide" alt="Points" title="Points">P</th>
-									<th className="50-pixels-wide" alt="Powerplay Goals" title="Powerplay Goals">PPG</th>
-									<th className="50-pixels-wide" alt="Powerplay Assists" title="Powerplay Assists">PPA</th>
-									<th className="50-pixels-wide" alt="Points" title="Points">PPP</th>
-									<th className="50-pixels-wide" alt="Shorthanded Goals" title="Shorthanded Goals">SHG</th>
-									<th className="50-pixels-wide" alt="Shorthanded Assists" title="Shorthanded Assists">SHA</th>
-									<th className="50-pixels-wide" alt="Shorthanded Points" title="Shorthanded Points">SHP</th>
-									<th className="50-pixels-wide" alt="Game-Winning Goals" title="Game-Winning Goals">GWG</th>
-									<th className="50-pixels-wide" alt="Plus / Minus Differential" title="Plus / Minus Differential">+ / -</th>
-									<th className="50-pixels-wide" alt="Penalty Minutes" title="Penalty Minutes">PIM</th>
-									<th className="50-pixels-wide" alt="Shots On Goal" title="Shots On Goal">SOG</th>
-									<th className="50-pixels-wide" alt="Faceoffs Won" title="Faceoffs Won">FW</th>
-									<th className="50-pixels-wide" alt="Faceoffs Lost" title="Faceoffs Lost">FL</th>
-									<th className="50-pixels-wide" alt="Hits" title="Hits">Hits</th>
-									<th className="50-pixels-wide" alt="Blocks" title="Blocks">Blks</th>*/}
 								</tr>
 							</thead>
 							<tbody>
