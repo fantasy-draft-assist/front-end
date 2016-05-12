@@ -682,11 +682,11 @@ li {
 			}
 			margin: auto;
 			tbody {
-				tr:nth-child(even) {
-					background: $LightningGrey;
-				}
 				tr:nth-child(odd) {
 					background: lighten($LightningGrey, 30%);
+				}
+				tr:nth-child(even) {
+					background: $LightningGrey;
 				}
 				.interpolated-table-rows {
 					background: $LightningWhite;
@@ -782,19 +782,75 @@ li {
 // SIDE BY SKATER COMPONENT -- START
 
 .side-by-skater {
-	.two-sides {
+	// display: flex;
+	// justify-content: center;
+	// align-items: center;
+	.three-columns {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		margin: 40px auto;
 		ul {
-			display: flex;
-			flex-direction: column:
-			align-items: flex-end;
-			height: 900px;
-			border: 2px solid red;
-			margin: 40px;
+			// display: flex;
+			// flex-direction: column;
+			// align-items: flex-end;
+			// height: 900px;
+			border: 2px solid $LightningWhite;
+			// margin: 5px;
 			li {
-				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border: 2px solid $LightningWhite;
+				&.top-left-corner {
+					height: 161px;
+				}
+				&.player-name {
+					// font-family: 'Shadows Into Light', cursive;
+					font-size: 30px;
+				}
+			}
+			&.stat-numbers {
+				li:nth-child(odd) {
+					background: $LightningGrey;
+					&:hover {
+						background: $LightningBlue;
+						color: $LightningWhite;
+						font-weight: bold;
+					}
+				}
+				li:nth-child(even) {
+					background: lighten($LightningGrey, 30%);
+					&:hover {
+						background: $LightningBlue;
+						color: $LightningWhite;
+						font-weight: bold;
+					}
+				}
+				li.no-fill {
+					background: $LightningWhite;
+					&:hover {
+						background: $LightningWhite;
+						color: $LightningBlue;
+						font-weight: normal;
+					}
+					&.crazy-li {
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						.span-left {
+							margin-left: 0;
+							margin-right: 5px;
+						}
+						.span-middle {
+							margin: auto 5px;
+						}
+						.span-right {
+							margin-left: 5px;
+							margin-right: 0;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -810,13 +866,75 @@ li {
 // SIDE BY GOALIE COMPONENT -- START
 
 .side-by-goalie {
-	.two-sides {
+	// display: flex;
+	// justify-content: center;
+	// align-items: center;
+	.three-columns {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		margin: 40px auto;
 		ul {
-			margin: 40px;
+			// display: flex;
+			// flex-direction: column;
+			// align-items: flex-end;
+			// height: 900px;
+			border: 2px solid $LightningWhite;
+			// margin: 5px;
 			li {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border: 2px solid $LightningWhite;
+				&.top-left-corner {
+					height: 161px;
+				}
+				&.player-name {
+					// font-family: 'Shadows Into Light', cursive;
+					font-size: 30px;
+				}
+			}
+			&.stat-numbers {
+				li:nth-child(odd) {
+					background: $LightningGrey;
+					&:hover {
+						background: $LightningBlue;
+						color: $LightningWhite;
+						font-weight: bold;
+					}
+				}
+				li:nth-child(even) {
+					background: lighten($LightningGrey, 30%);
+					&:hover {
+						background: $LightningBlue;
+						color: $LightningWhite;
+						font-weight: bold;
+					}
+				}
+				li.no-fill {
+					background: $LightningWhite;
+					&:hover {
+						background: $LightningWhite;
+						color: $LightningBlue;
+						font-weight: normal;
+					}
+					&.crazy-li {
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						.span-left {
+							margin-left: 0;
+							margin-right: 5px;
+						}
+						.span-middle {
+							margin: auto 5px;
+						}
+						.span-right {
+							margin-left: 5px;
+							margin-right: 0;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -834,7 +952,7 @@ li {
 .league-settings {
 	font-family: Arial;
 	font-size: 18px;
-	background: $LightningGrey;
+	background: $LightningWhite;
 	margin: 0px 200px 0px 200px;
 	min-height: 424px;
 	.league-top-text {
@@ -864,7 +982,7 @@ li {
 				margin-left: 50px;
 			}
 			.stats-header {
-				color: $LightningWhite;
+				color: $LightningBlue;
 				font-family: 'Shadows Into Light', cursive;
 				font-size: 40px;
 				// text-decoration: underline;
@@ -879,7 +997,7 @@ li {
 			color: $LightningBlue;
 			font-size: 30px;
 			font-weight: bold;
-			margin: 10px auto 40px auto;
+			margin: 40px auto 40px auto;
 			width: 300px;
 			height: 50px;
 		}

@@ -48,11 +48,22 @@ export default class SideByGoalie extends Component {
 		// 	{datum.player.uniform_number} = 69;
 		// }
 		return twoPlayers.map(datum => (
-			<ul>
-				<li><img src={datum.player.headshot_url} alt={`{datum.player.first_name} {datum.player.last_name}`} title={`${datum.player.first_name} ${datum.player.last_name}`} /></li>
-				<li key={datum.player.yahoo_player_id}>{datum.player.first_name} {datum.player.last_name}</li>
-				<li>{datum.player.uniform_number}</li>
-				<li>{datum.player.positions}</li>
+			<ul className="stat-numbers">
+				<li className="no-fill">
+					<img src={datum.player.headshot_url} alt={`{datum.player.first_name} {datum.player.last_name}`} title={`${datum.player.first_name} ${datum.player.last_name}`} width="75" height="100" />
+				</li>
+				<li className="player-name no-fill" key={datum.player.yahoo_player_id}>{`${datum.player.first_name} ${datum.player.last_name}`}</li>
+				<li className="no-fill crazy-li">
+					<span className="span-left">
+						{datum.player.positions[0]}
+					</span>
+					<span className="span-middle">
+						{datum.pro_team.name}
+					</span>
+					<span className="span-right">
+						{`#${datum.player.uniform_number}`}
+					</span>
+				</li>
 				<li>{datum.stats[0].wins}</li>
 				<li>{datum.stats[0].losses}</li>
 				<li>{datum.stats[0].goals_against}</li>
@@ -72,8 +83,9 @@ export default class SideByGoalie extends Component {
 	render() {
 		return(
 			<div className="side-by-goalie">
-				<div className="two-sides">
+				<div className="three-columns">
 					<ul>
+						<li className="top-left-corner"></li>
 						<li>Wins</li>
 						<li>Losses</li>
 						<li>Goals Against</li>

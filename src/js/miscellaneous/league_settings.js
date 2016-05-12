@@ -187,6 +187,7 @@ export default class AccountSettings extends Component {
 								<input type="checkbox" defaultChecked="true" name="faceoffs_lost" />
 								&nbsp;
 								Faceoffs Lost
+								<br />
 								<input type="checkbox" defaultChecked="true" name="hits" />
 								&nbsp;
 								Hits
