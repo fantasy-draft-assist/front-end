@@ -787,8 +787,14 @@ li {
 		justify-content: center;
 		align-items: center;
 		ul {
+			display: flex;
+			flex-direction: column:
+			align-items: flex-end;
+			height: 900px;
+			border: 2px solid red;
 			margin: 40px;
 			li {
+				text-align: center;
 			}
 		}
 	}

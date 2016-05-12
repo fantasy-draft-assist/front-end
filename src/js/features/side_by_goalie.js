@@ -49,21 +49,21 @@ export default class SideByGoalie extends Component {
 		// }
 		return twoPlayers.map(datum => (
 			<ul>
-				<li><img src={datum.player.headshot_url} alt={`{datum.player.first_name} {datum.player.last_name}`} title={`${datum.player.first_name} ${datum.player.last_name}`}height="200" width="150" /></li>
+				<li><img src={datum.player.headshot_url} alt={`{datum.player.first_name} {datum.player.last_name}`} title={`${datum.player.first_name} ${datum.player.last_name}`} /></li>
 				<li key={datum.player.yahoo_player_id}>{datum.player.first_name} {datum.player.last_name}</li>
 				<li>{datum.player.uniform_number}</li>
 				<li>{datum.player.positions}</li>
-				<li>{datum.stats[0].wins} Wins</li>
-				<li>{datum.stats[0].losses} Losses</li>
-				<li>{datum.stats[0].goals_against} Goals Against</li>
-				<li>{datum.stats[0].goals_against_average} Goals Against Average</li>
-				<li>{datum.stats[0].saves} Saves</li>
-				<li>{datum.stats[0].save_percentage} Save Percentage</li>
-				<li>{datum.stats[0].shutouts} Shutouts</li>
-				<li>{datum.stats[0].shots_against} Shots Against</li>
-				<li>{datum.stats[0].games_played} Games Played</li>
-				<li>{datum.stats[0].games_started} Games Started</li>
-				<li>{datum.stats[0].minutes_played} Minutes Played</li>
+				<li>{datum.stats[0].wins}</li>
+				<li>{datum.stats[0].losses}</li>
+				<li>{datum.stats[0].goals_against}</li>
+				<li>{datum.stats[0].goals_against_average}</li>
+				<li>{datum.stats[0].saves}</li>
+				<li>{datum.stats[0].save_percentage}</li>
+				<li>{datum.stats[0].shutouts}</li>
+				<li>{datum.stats[0].shots_against}</li>
+				<li>{datum.stats[0].games_played}</li>
+				<li>{datum.stats[0].games_started}</li>
+				<li>{datum.stats[0].minutes_played}</li>
 			</ul>
 			)
 		)
@@ -73,6 +73,19 @@ export default class SideByGoalie extends Component {
 		return(
 			<div className="side-by-goalie">
 				<div className="two-sides">
+					<ul>
+						<li>Wins</li>
+						<li>Losses</li>
+						<li>Goals Against</li>
+						<li>Goals Against Average</li>
+						<li>Saves</li>
+						<li>Save Percentage</li>
+						<li>Shutouts</li>
+						<li>Shots Against</li>
+						<li>Games Played</li>
+						<li>Games Started</li>
+						<li>Minutes Played</li>
+					</ul>
 					{this.getSBSPlayers()}
 				</div>
 			</div>

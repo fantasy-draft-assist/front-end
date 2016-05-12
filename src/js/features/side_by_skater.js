@@ -49,37 +49,60 @@ export default class SideBySkater extends Component {
 		// }
 		return twoPlayers.map(datum => (
 			<ul>
-				<li><img src={datum.player.headshot_url} alt={`{datum.player.first_name} {datum.player.last_name}`} title={`${datum.player.first_name} ${datum.player.last_name}`}height="200" width="150" /></li>
+				<li><img src={datum.player.headshot_url} alt={`{datum.player.first_name} {datum.player.last_name}`} title={`${datum.player.first_name} ${datum.player.last_name}`} /></li>
 				<li key={datum.player.yahoo_player_id}>{datum.player.first_name} {datum.player.last_name}</li>
 				<li>{datum.player.uniform_number}</li>
-				<li>{datum.player.positions[0]} | {datum.player.positions[1]}</li>
-				<li>{datum.stats[0].goals} Goals</li>
-				<li>{datum.stats[0].assists} Assists</li>
-				<li>{datum.stats[0].points} Points</li>
-				<li>{datum.stats[0].powerplay_goals} Powerplay Goals</li>
-				<li>{datum.stats[0].powerplay_assists} Powerplay Assists</li>
-				<li>{datum.stats[0].powerplay_points} Powerplay Points</li>
-				<li>{datum.stats[0].shorthanded_goals} Shorthanded Goals</li>
-				<li>{datum.stats[0].shorthanded_assists} Shorthanded Assists</li>
-				<li>{datum.stats[0].shorthanded_points} Shorthanded Points</li>
-				<li>{datum.stats[0].game_winning_goals} Game-Winning Goals</li>
-				<li>{datum.stats[0].plus_minus} Plus / Minus</li>
-				<li>{datum.stats[0].penalty_minutes} Penalty Minutes</li>
-				<li>{datum.stats[0].shots_on_goal} Shots On Goal</li>
-				<li>{datum.stats[0].faceoffs_won} Faceoffs Won</li>
-				<li>{datum.stats[0].faceoffs_lost} Faceoffs Lost</li>
-				<li>{datum.stats[0].shot_percentage} Shot Percentage</li>
-				<li>{datum.stats[0].hits} Hits</li>
-				<li>{datum.stats[0].blocks} Blocks</li>	
+				<li>{datum.player.positions[0]}</li>
+				<li>{datum.stats[0].goals}</li>
+				<li>{datum.stats[0].assists}</li>
+				<li>{datum.stats[0].points}</li>
+				<li>{datum.stats[0].powerplay_goals}</li>
+				<li>{datum.stats[0].powerplay_assists}</li>
+				<li>{datum.stats[0].powerplay_points}</li>
+				<li>{datum.stats[0].shorthanded_goals}</li>
+				<li>{datum.stats[0].shorthanded_assists}</li>
+				<li>{datum.stats[0].shorthanded_points}</li>
+				<li>{datum.stats[0].game_winning_goals}</li>
+				<li>{datum.stats[0].plus_minus}</li>
+				<li>{datum.stats[0].penalty_minutes}</li>
+				<li>{datum.stats[0].shots_on_goal}</li>
+				<li>{datum.stats[0].faceoffs_won}</li>
+				<li>{datum.stats[0].faceoffs_lost}</li>
+				<li>{datum.stats[0].shot_percentage}</li>
+				<li>{datum.stats[0].hits}</li>
+				<li>{datum.stats[0].blocks}</li>	
 			</ul>
 			)
 		)
 	}
 	
 	render() {
+		let { playersBeingCompared } = this.state;
+		console.log('In the render =>', playersBeingCompared);
 		return(
 			<div className="side-by-skater">
 				<div className="two-sides">
+					<ul>
+						<li>Position</li>
+						<li>Goals</li>
+						<li>Assists</li>
+						<li>Points</li>
+						<li>Powerplay Goals</li>
+						<li>Powerplay Assists</li>
+						<li>Powerplay Points</li>
+						<li>Shorthanded Goals</li>
+						<li>Shorthanded Assists</li>
+						<li>Shorthanded Points</li>
+						<li>Game-Winning Goals</li>
+						<li>Plus / Minus</li>
+						<li>Penalty Minutes</li>
+						<li>Shots On Goal</li>
+						<li>Faceoffs Won</li>
+						<li>Faceoffs Lost</li>
+						<li>Shot Percentage</li>
+						<li>Hits</li>
+						<li>Blocks</li>
+					</ul>
 					{::this.getSBSPlayers()}
 				</div>
 			</div>
