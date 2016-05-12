@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import Cookie from 'js-cookie';
 import { ajax } from'jquery';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 
 export default class SearchResults extends Component {
 
 	constructor(...args) {
 		super(...args);
-
 		this.state = { playersToReturn: [], thePlaya: {} };
 	}
 
@@ -26,7 +25,7 @@ export default class SearchResults extends Component {
 			let data = this.state.playersToReturn;
 		console.log("The data is =>", data);
 		console.log('The first object in data is =>', data[0]);
-		console.log('data[0].player shows =>', data[0].player);
+		// console.log('data[0].player shows =>', data[0].player);
 
 		this.setState({thePlaya: data[0].player});
 
@@ -34,6 +33,7 @@ export default class SearchResults extends Component {
 
 		})
 	}
+
 
 	wordsOnPage() {
 		let data = this.state.playersToReturn;
@@ -47,20 +47,31 @@ export default class SearchResults extends Component {
 		// console.log('data[0].pro_team shows =>', data[0].pro_team);
 		return (
 			data.map(datum => {
-				<li>{datum.player.last_name}</li>
+				<li key={datum.player.yahoo_player_id}>{datum.player.last_name}</li>
 			})
 		)
 	}
 
+	// clickHandler( {datum.player.yahoo_player_id} ) {
+	// 	let 
+	// 	hashHistory.push(`/player_profile/${datum.player.yahoo_player_id}`);
+	// }
+
 	getPlayer(datum) {
 		return (
-			<Link to="/player_profile/{datum.player.yahoo_player_id">
-				<li key={datum.player.yahoo_player_id} className="players-returned">
+			<Link to={`/player_profile/${datum.player.yahoo_player_id}`}>
+				<li /*onClick={::this.clickHandler( {datum.player.yahoo_player_id} )}*/ key={datum.player.yahoo_player_id} className="players-returned">
 					<img src={datum.player.headshot_url} alt={`${datum.player.first_name} ${datum.player.last_name}`} alt={`${datum.player.first_name} ${datum.player.last_name}`} />
 					<span className="span-one">
 						{`${datum.player.first_name} ${datum.player.last_name}`}
 					</span>
 					<span className="span-two">
+						{`#${datum.player.uniform_number}`}
+					</span>
+					<span className="span-three">
+						{datum.player.positions[0]}
+					</span>
+					<span className="span-four">
 						{datum.pro_team.name}
 					</span>
 				</li>
@@ -77,6 +88,11 @@ export default class SearchResults extends Component {
 		let player = this.state.thePlaya;
 		console.log("players in state", data[0]);
 		console.log("player", player.last_name);
+		// if (!data.player) {
+		// 	return (
+		// 		<div>No players found.</div>
+		// 	)
+		// }
 		return (
 			<div className="search-results">
 				<ul>{data.map(datum => {
@@ -87,3 +103,6 @@ export default class SearchResults extends Component {
 		)
 	}
 }
+
+
+

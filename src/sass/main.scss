@@ -749,7 +749,7 @@ li {
 	width: 100%;
 	min-height: 424px;
 	ul {
-		width: 50%;
+		width: 90%;
 		margin: 60px auto 60px auto;
 		a {
 			li {
@@ -777,13 +777,21 @@ li {
 
 				}
 				.span-one {
-					font-family: 'Shadows Into Light', cursive;
 					margin: auto 10px;
+					width: 420px;
 				}
 				.span-two {
-					font-family: 'Shadows Into Light', cursive;
+					margin: auto 10px;
+					width: 60px;
+				}
+				.span-three {
+					margin: auto 10px;
+					width: 60px;
+				}
+				.span-four {
 					margin-left: 10px;
 					margin-right: 20px;
+					width: 370px;
 				}
 			}
 		}
@@ -791,6 +799,19 @@ li {
 }
 
 // SEARCH RESULTS COMPONENT -- END
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// PLAYER PROFILE COMPONENT -- START
+
+.player-profile {
+	min-height: 450px;
+
+}
+
+// PLAYER PROFILE COMPONENT -- END
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
