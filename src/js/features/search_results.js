@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Cookie from 'js-cookie';
 import { ajax } from'jquery';
+import { Link } from 'react-router';
 
 export default class SearchResults extends Component {
 
@@ -51,6 +52,22 @@ export default class SearchResults extends Component {
 		)
 	}
 
+	getPlayer(datum) {
+		return (
+			<Link to="/player_profile/{datum.player.yahoo_player_id">
+				<li key={datum.player.yahoo_player_id} className="players-returned">
+					<img src={datum.player.headshot_url} alt={`${datum.player.first_name} ${datum.player.last_name}`} alt={`${datum.player.first_name} ${datum.player.last_name}`} />
+					<span className="span-one">
+						{`${datum.player.first_name} ${datum.player.last_name}`}
+					</span>
+					<span className="span-two">
+						{datum.pro_team.name}
+					</span>
+				</li>
+			</Link>
+		)
+	}
+
 	
 
 	render() {
@@ -62,12 +79,10 @@ export default class SearchResults extends Component {
 		console.log("player", player.last_name);
 		return (
 			<div className="search-results">
-				Search Results Page
-				<h2>{player.last_name}</h2>
 				<ul>{data.map(datum => {
 					<li key={datum.player.id}>{datum.player.last_name}</li>
 			})}</ul>
-				<ul>{::this.wordsOnPage()}</ul>
+				<ul>{data.map(::this.getPlayer)}</ul>
 			</div>
 		)
 	}

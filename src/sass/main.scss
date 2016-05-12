@@ -746,7 +746,48 @@ li {
 // SEARCH RESULTS COMPONENT -- START
 
 .search-results {
+	width: 100%;
 	min-height: 424px;
+	ul {
+		width: 50%;
+		margin: 60px auto 60px auto;
+		a {
+			li {
+				border-radius: 10px;
+				color: $LightningBlue;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				font-size: 35px;
+				line-height: 35px;
+				margin: 2px auto;
+				&:hover {
+					background: $LightningBlue;
+					color: $LightningWhite;
+					img {
+						background: $LightningWhite;
+						border: 2px solid $LightningGrey;
+						border-radius: 5px;
+					}
+				}
+				img {
+					border: 2px solid $LightningBlue;
+					border-radius: 5px;
+					margin: 10px 10px 10px 20px;
+
+				}
+				.span-one {
+					font-family: 'Shadows Into Light', cursive;
+					margin: auto 10px;
+				}
+				.span-two {
+					font-family: 'Shadows Into Light', cursive;
+					margin-left: 10px;
+					margin-right: 20px;
+				}
+			}
+		}
+	}
 }
 
 // SEARCH RESULTS COMPONENT -- END
@@ -782,21 +823,13 @@ li {
 // SIDE BY SKATER COMPONENT -- START
 
 .side-by-skater {
-	// display: flex;
-	// justify-content: center;
-	// align-items: center;
 	.three-columns {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		margin: 40px auto;
 		ul {
-			// display: flex;
-			// flex-direction: column;
-			// align-items: flex-end;
-			// height: 900px;
 			border: 2px solid $LightningWhite;
-			// margin: 5px;
 			li {
 				display: flex;
 				justify-content: center;
@@ -806,7 +839,6 @@ li {
 					height: 161px;
 				}
 				&.player-name {
-					// font-family: 'Shadows Into Light', cursive;
 					font-size: 30px;
 				}
 			}
@@ -866,21 +898,13 @@ li {
 // SIDE BY GOALIE COMPONENT -- START
 
 .side-by-goalie {
-	// display: flex;
-	// justify-content: center;
-	// align-items: center;
 	.three-columns {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		margin: 40px auto;
 		ul {
-			// display: flex;
-			// flex-direction: column;
-			// align-items: flex-end;
-			// height: 900px;
 			border: 2px solid $LightningWhite;
-			// margin: 5px;
 			li {
 				display: flex;
 				justify-content: center;
@@ -890,7 +914,6 @@ li {
 					height: 161px;
 				}
 				&.player-name {
-					// font-family: 'Shadows Into Light', cursive;
 					font-size: 30px;
 				}
 			}

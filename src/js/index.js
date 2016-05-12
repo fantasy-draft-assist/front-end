@@ -19,6 +19,7 @@ import TimelineSkater from './features/timeline_skater';
 import SideBySkater from './features/side_by_skater';
 import SideByGoalie from './features/side_by_goalie';
 import SearchResults from './features/search_results';
+import PlayerProfile from './features/player_profile';
 import Privacy from './miscellaneous/privacy';
 import Legal from './miscellaneous/legal';
 
@@ -41,6 +42,7 @@ render ((
 				<Route path="/rankings_goalie" component={ RankingsGoalie } />
 				<Route path="/timeline_skater/:idA/:idB" component={ TimelineSkater } />
 				<Route path="/search_results/:name" component={ SearchResults } />
+				<Route path="/player_profile/:yahooID" component={ PlayerProfile } />
 				<Route path="/side_by_skater/:idA/:idB" component={ SideBySkater } />
 				<Route path="/side_by_goalie/:idA/:idB" component={ SideByGoalie } />
 			</Route>
