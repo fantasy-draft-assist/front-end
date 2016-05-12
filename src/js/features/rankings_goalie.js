@@ -124,15 +124,11 @@ export default class RankingsGoalie extends Component {
 
 		return (
 			<div className="rankings-goalie">
-				<SSF onData={::this.stateUpdateHandler}>
-					<select name="year">
-						<option>Pick a Season</option>
-						<option value="2012">2012-13</option>
-						<option value="2013">2013-14</option>
-						<option value="2014">2014-15</option>
-						<option value="2015">2015-16</option>
-					</select>
-					<select name="stat">
+				<SSF className="top-form" onData={::this.stateUpdateHandler}>
+					<span className="stat-year">
+						Sort By Scoring Category & Season
+					</span>
+					<select className="select-stat" name="stat">
 						<option>Choose a Scoring Category</option>
 						<option value="wins">Wins</option>
 						<option value="Losses">Losses</option>
@@ -145,7 +141,14 @@ export default class RankingsGoalie extends Component {
 						<option value="games_started">Games Started</option>
 						<option value="minutes_played">Minutes Played</option>
 					</select>
-					<button>Check It Out</button>
+					<select className="select-year" name="year">
+						<option>Pick a Season</option>
+						<option value="2012">2012-13</option>
+						<option value="2013">2013-14</option>
+						<option value="2014">2014-15</option>
+						<option value="2015">2015-16</option>
+					</select>
+					<button className="stat-year-button">Check It Out</button>
 				</SSF>
 				<SSF onData={::this.changeComponentHandler} className="table-form">
 					{/*<select onChange={::this.setFilter}>
@@ -162,9 +165,8 @@ export default class RankingsGoalie extends Component {
 							<thead>
 								<tr>
 									<th></th>
-									<th>Name</th>
-									<th>Team & Number</th>
-
+									<th></th>
+									<th></th>
 									{settings.map(setting => {
 										name = setting.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 										return <th key={setting} className="50-pixels-wide" alt={name} title={name}>{name}</th>
@@ -176,11 +178,13 @@ export default class RankingsGoalie extends Component {
 							</tbody>
 						</table>
 					</div>
-					<div>
-						<button onClick={() => this.action = 'not chart'}>Side-By-Side Comparison</button>
+					<div className="comparison-text">
+						Select Two Goalies To Compare
 					</div>
-					<div>
-						<button onClick={() => this.action = 'chart'}>Graph Comparison</button>
+					<div className="sbs-graph">
+						<button onClick={() => this.action = 'not chart'}>View Side By Side</button>
+
+						<button onClick={() => this.action = 'chart'}>View Stat Graph</button>
 					</div>
 				</SSF>
 			</div>

@@ -467,32 +467,144 @@ li {
 
 .rankings-skater {
 	min-height: 424px;
+	margin: 50px auto 50px auto;
+	.top-form {
+		width: 80%;
+		height: 60px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-bottom: 1px solid $LightningBlue;
+		// border-top: 2px solid $LightningBlue;
+		// border-left: 2px solid $LightningBlue;
+		// border-right: 2px solid $LightningBlue;
+		// border-top-left-radius: 20px;
+		// border-top-right-radius: 20px;
+		margin: auto;
+		padding-bottom: 5px;
+		.stat-year {
+			color: $LightningBlue;
+			font-family: 'Shadows Into Light', cursive;
+			font-size: 30px;
+			line-height: 30px;
+			margin: auto 15px;
+		}
+		.select-stat {
+			height: 30px;
+			margin: auto 15px;
+		}
+		.select-year {
+			height: 30px;
+			margin: auto 15px;
+		}
+		.stat-year-button {
+			width: 180px;
+			height: 40px;
+			background: $LightningBlue;
+			border: none;
+			border-radius: 5px;
+			color: $LightningWhite;
+			font-family: 'Shadows Into Light', cursive;
+			font-size: 30px;
+			font-weight: bold;
+			line-height: 30px;
+			margin: auto 15px;
+		}
+	}
 	.table-form {
+		background: $LightningWhite;
 		display: block;
 		text-align: center;
+		.filter-by-position {
+			width: 80%;
+			height: 60px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-top: 1px solid $LightningBlue;
+			// border-bottom: 2px solid $LightningBlue;
+			// border-left: 2px solid $LightningBlue;
+			// border-right: 2px solid $LightningBlue;
+			// border-bottom-left-radius: 20px;
+			// border-bottom-right-radius: 20px;
+			margin: auto auto 40px auto;
+			padding-top: 5px;
+			.filter-text {
+				color: $LightningBlue;
+				font-family: 'Shadows Into Light', cursive;
+				font-size: 30px;
+				line-height: 30px;
+				margin: auto 30px;
+			}
+			.position-selector {
+				height: 30px;
+				margin: auto 30px;
+			}
+		}
 		table {
+			margin: 20px auto;
 			thead {
+				background: $LightningBlue;
+				border: 1px solid $LightningWhite;
+				color: $LightningWhite;
 				tr {
 					th {
+						font-weight: normal;
 					}
 				}
 			}
 			margin: auto;
-			.interpolated-table-rows {
-				background: $LightningWhite;
-				&:hover {
+			tbody {
+				tr:nth-child(even) {
 					background: $LightningGrey;
-					color: $LightningBlue;
-					font-weight: bold;
 				}
-				td {
-					border: 1px solid black;
-					padding-left: 14px;
-					padding-right: 14px;
-					input {
-						padding-bottom: 20px;
+				tr:nth-child(odd) {
+					background: lighten($LightningGrey, 30%);
+				}
+				.interpolated-table-rows {
+					background: $LightningWhite;
+					&:hover {
+						background: $LightningBlue;
+						color: $LightningWhite;
+					}
+					td {
+						border: 1px solid $LightningWhite;
+						padding-left: 5px;
+						padding-right: 5px;
+						input {
+							padding-bottom: 20px;
+						}
+						&.checkbox-image {
+							margin-right: 10px;
+						}
 					}
 				}
+			}
+		}
+		.comparison-text {
+			color: $LightningBlue;
+			font-family: 'Shadows Into Light', cursive;
+			font-size: 44px;
+			font-weight: bold;
+			margin: 30px auto 10px auto;
+		}
+		.sbs-graph {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 10px;
+			button {
+				width: 250px;
+				height: 50px;
+				background: $LightningBlue;
+				border-radius: 10px;
+				border: none;
+				color: $LightningWhite;
+				font-family: 'Shadows Into Light', cursive;
+				font-size: 30px;
+				line-height: 30px;
+				font-weight: bold;
+				margin: auto 25px;
 			}
 		}
 	}
@@ -508,32 +620,118 @@ li {
 
 .rankings-goalie {
 	min-height: 424px;
+	margin: 50px auto 50px auto;
+	.top-form {
+		width: 80%;
+		height: 60px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		// border-bottom: 1px solid $LightningBlue;
+		// border-top: 2px solid $LightningBlue;
+		// border-left: 2px solid $LightningBlue;
+		// border-right: 2px solid $LightningBlue;
+		// border-top-left-radius: 20px;
+		// border-top-right-radius: 20px;
+		margin: auto auto 40px auto;
+		padding-bottom: 5px;
+		.stat-year {
+			color: $LightningBlue;
+			font-family: 'Shadows Into Light', cursive;
+			font-size: 30px;
+			line-height: 30px;
+			margin: auto 15px;
+		}
+		.select-stat {
+			height: 30px;
+			margin: auto 15px;
+		}
+		.select-year {
+			height: 30px;
+			margin: auto 15px;
+		}
+		.stat-year-button {
+			width: 180px;
+			height: 40px;
+			background: $LightningBlue;
+			border: none;
+			border-radius: 5px;
+			color: $LightningWhite;
+			font-family: 'Shadows Into Light', cursive;
+			font-size: 30px;
+			font-weight: bold;
+			line-height: 30px;
+			margin: auto 15px;
+		}
+	}
 	.table-form {
+		background: $LightningWhite;
 		display: block;
 		text-align: center;
 		table {
+			margin: 20px auto;
 			thead {
+				background: $LightningBlue;
+				border: 1px solid $LightningWhite;
+				color: $LightningWhite;
 				tr {
 					th {
+						font-weight: normal;
 					}
 				}
 			}
 			margin: auto;
-			.interpolated-table-rows {
-				background: $LightningWhite;
-				&:hover {
+			tbody {
+				tr:nth-child(even) {
 					background: $LightningGrey;
-					color: $LightningBlue;
-					font-weight: bold;
 				}
-				td {
-					border: 1px solid black;
-					padding-left: 14px;
-					padding-right: 14px;
-					input {
-						padding-bottom: 20px;
+				tr:nth-child(odd) {
+					background: lighten($LightningGrey, 30%);
+				}
+				.interpolated-table-rows {
+					background: $LightningWhite;
+					&:hover {
+						background: $LightningBlue;
+						color: $LightningWhite;
+					}
+					td {
+						border: 1px solid $LightningWhite;
+						padding-left: 5px;
+						padding-right: 5px;
+						input {
+							padding-bottom: 20px;
+						}
+						&.checkbox-image {
+							margin-right: 10px;
+						}
 					}
 				}
+			}
+		}
+		.comparison-text {
+			color: $LightningBlue;
+			font-family: 'Shadows Into Light', cursive;
+			font-size: 44px;
+			font-weight: bold;
+			margin: 30px auto 10px auto;
+		}
+		.sbs-graph {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 10px;
+			button {
+				width: 250px;
+				height: 50px;
+				background: $LightningBlue;
+				border-radius: 10px;
+				border: none;
+				color: $LightningWhite;
+				font-family: 'Shadows Into Light', cursive;
+				font-size: 30px;
+				line-height: 30px;
+				font-weight: bold;
+				margin: auto 25px;
 			}
 		}
 	}

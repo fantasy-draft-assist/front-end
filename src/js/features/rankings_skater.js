@@ -47,7 +47,7 @@ export default class RankingsSkater extends Component {
 		}
 		return data.map(hockeyPlayer => (
 			<tr key={hockeyPlayer.yahoo_player_id} className="interpolated-table-rows">
-				<td>
+				<td className="checkbox-image">
 					<input type="checkbox" name="forComparison" value={hockeyPlayer.player.yahoo_player_id}></input>
 					&nbsp;
 					&nbsp;
@@ -124,15 +124,11 @@ export default class RankingsSkater extends Component {
 
 		return (
 			<div className="rankings-skater">
-				<SSF onData={::this.stateUpdateHandler}>
-					<select name="year">
-						<option>Pick a Season</option>
-						<option value="2012">2012-13</option>
-						<option value="2013">2013-14</option>
-						<option value="2014">2014-15</option>
-						<option value="2015">2015-16</option>
-					</select>
-					<select name="stat">
+				<SSF className="top-form" onData={::this.stateUpdateHandler}>
+					<span className="stat-year">
+						Sort By Scoring Category & Season
+					</span>
+					<select className="select-stat" name="stat">
 						<option>Choose a Scoring Category</option>
 						<option value="goals">Goals</option>
 						<option value="assists">Assists</option>
@@ -152,24 +148,36 @@ export default class RankingsSkater extends Component {
 						<option value="hits">Hits</option>
 						<option value="blocks">Blocks</option>
 					</select>
-					<button>Check It Out</button>
+					<select className="select-year" name="year">
+						<option>Pick a Season</option>
+						<option value="2012">2012-13</option>
+						<option value="2013">2013-14</option>
+						<option value="2014">2014-15</option>
+						<option value="2015">2015-16</option>
+					</select>
+					<button className="stat-year-button">Check It Out</button>
 				</SSF>
 				<SSF onData={::this.changeComponentHandler} className="table-form">
-					<select onChange={::this.setFilter}>
-						<option>Sort Rankings By Position</option>
-						<option value=''>All Positions</option>
-						<option value='LW'>Left Wing</option>
-						<option value='RW'>Right Wing</option>
-						<option value='C'>Center</option>
-						<option value='D'>Defenseman</option>
-					</select>
+					<div className="filter-by-position">
+						<span className="filter-text">
+							Filter Statistics By Skater Position
+						</span>
+						<select className="position-selector" onChange={::this.setFilter}>
+							<option>Sort Rankings By Position</option>
+							<option value=''>All Positions</option>
+							<option value='LW'>Left Wing</option>
+							<option value='RW'>Right Wing</option>
+							<option value='C'>Center</option>
+							<option value='D'>Defenseman</option>
+						</select>
+					</div>
 					<div className="player-rankings">
 						<table>
 							<thead>
 								<tr>
 									<th></th>
-									<th>Name</th>
-									<th>Team & Number</th>
+									<th></th>
+									<th></th>
 
 									{settings.map(setting => {
 										name = setting.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
@@ -182,11 +190,12 @@ export default class RankingsSkater extends Component {
 							</tbody>
 						</table>
 					</div>
-					<div>
-						<button onClick={() => this.action = 'not chart'}>Side-By-Side Comparison</button>
+					<div className="comparison-text">
+						Select Two Skaters To Compare
 					</div>
-					<div>
-						<button onClick={() => this.action = 'chart'}>Graph Comparison</button>
+					<div className="sbs-graph">
+						<button onClick={() => this.action = 'not chart'}>View Side By Side</button>
+						<button onClick={() => this.action = 'chart'}>View Stat Graph</button>
 					</div>
 				</SSF>
 			</div>
