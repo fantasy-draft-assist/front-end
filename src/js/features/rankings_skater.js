@@ -32,6 +32,7 @@ export default class RankingsSkater extends Component {
 			headers: { Internal: Cookie.get('currentUser') }
 			}).then((settings) => {
 			this.setState( {settings} );
+			console.log('Settings after Ajax', this.state.settings);
 		});
 	}
 
@@ -107,7 +108,7 @@ export default class RankingsSkater extends Component {
 		// just grab first player to check for null values
 		let firstPlayer = this.state.hockeyPlayers[0];
 
-		// array od setting names we want.
+		// array of setting names we want.
 		let settings = Object.keys(this.state.settings)
 			.filter(setting => this.state.settings[setting])
 			.filter(setting => firstPlayer && firstPlayer.player_stats[setting]);

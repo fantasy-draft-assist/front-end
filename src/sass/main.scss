@@ -808,6 +808,10 @@ li {
 
 .player-profile {
 	min-height: 450px;
+	table {
+		border: 5px solid red;
+		overflow: scroll;
+	}
 
 }
 
