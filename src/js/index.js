@@ -15,7 +15,7 @@ import MockDraft from './features/mock_draft';
 import RankingsSkater from './features/rankings_skater';
 import RankingsGoalie from './features/rankings_goalie';
 import TimelineSkater from './features/timeline_skater';
-// import TimelineGoalie from './features/timeline_goalie';
+import TimelineGoalie from './features/timeline_goalie';
 import SideBySkater from './features/side_by_skater';
 import SideByGoalie from './features/side_by_goalie';
 import SearchResults from './features/search_results';
@@ -41,6 +41,7 @@ render ((
 				<Route path="/rankings_skater" component={ RankingsSkater } />
 				<Route path="/rankings_goalie" component={ RankingsGoalie } />
 				<Route path="/timeline_skater/:idA/:idB" component={ TimelineSkater } />
+				<Route path="/timeline_goalie/:idA/:idB" component={ TimelineGoalie } />
 				<Route path="/search_results/:name" component={ SearchResults } />
 				<Route path="/player_profile/:yahooID" component={ PlayerProfile } />
 				<Route path="/side_by_skater/:idA/:idB" component={ SideBySkater } />
@@ -50,6 +51,3 @@ render ((
 	</Router>
 	), document.querySelector('.app')
 )
-
-
-// <Route path="/timeline_goalie" component={ TimelineGoalie } />

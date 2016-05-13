@@ -16,6 +16,10 @@ export default class RankingsGoalie extends Component {
 		this.state = { hockeyPlayers: [], filter: null, settings: {} };
 	}
 
+
+
+
+
 	// When the component mounts
 	componentWillMount() {
 		ajax({
@@ -35,9 +39,17 @@ export default class RankingsGoalie extends Component {
 		});
 	}
 
+
+
+
+
 	setFilter(event) {
 		this.setState({filter: event.target.value});
 	}
+
+
+
+
 
 	getData() {
 		let data = this.state.hockeyPlayers;
@@ -65,6 +77,9 @@ export default class RankingsGoalie extends Component {
 	}
 
 
+
+
+
 	// Function called on button click to store playerID, pass that info along to a different component, and then render that component.
 	sbsHandler(comparisonData) {
 		console.log('At sbsHandler =>', comparisonData)
@@ -73,11 +88,18 @@ export default class RankingsGoalie extends Component {
 	}
 
 
+
+
+
 	// Function called on button click to store playerID, pass that info along to a different component, and then render that component.
 	chartHandler(comparisonData) {
 		console.log('At chartHandler =>', comparisonData)
-		hashHistory.push(`/timeline/${comparisonData.forComparison[0]}/${comparisonData.forComparison[1]}`);
+		hashHistory.push(`/timeline_goalie/${comparisonData.forComparison[0]}/${comparisonData.forComparison[1]}`);
 	}
+
+
+
+
 
 	// A data handler
 	changeComponentHandler(comparisonData) {
@@ -88,6 +110,10 @@ export default class RankingsGoalie extends Component {
 			this.chartHandler(comparisonData);
 		}
 	}
+
+
+
+
 
 	stateUpdateHandler(yearAndStat) {
 		console.log('At stateUpdateHandler =>', yearAndStat);
@@ -103,6 +129,10 @@ export default class RankingsGoalie extends Component {
 		)
 	}
 
+
+
+
+
 	getSettings() {
 		// just grab first player to check for null values
 		let firstPlayer = this.state.hockeyPlayers[0];
@@ -116,6 +146,10 @@ export default class RankingsGoalie extends Component {
 
 		return settings;
 	}
+
+
+
+
 
 	render() {
 

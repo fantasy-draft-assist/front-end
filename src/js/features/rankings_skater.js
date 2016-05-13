@@ -8,6 +8,7 @@ import SSF from 'react-simple-serial-form';
 import { hashHistory } from 'react-router';
 import Cookie from 'js-cookie';
 
+
 export default class RankingsSkater extends Component {
 
 	constructor(...args) {
@@ -15,6 +16,10 @@ export default class RankingsSkater extends Component {
 
 		this.state = { hockeyPlayers: [], filter: null, settings: {} };
 	}
+
+
+
+
 
 	// When the component mounts
 	componentWillMount() {
@@ -36,9 +41,17 @@ export default class RankingsSkater extends Component {
 		});
 	}
 
+
+
+
+
 	setFilter(event) {
 		this.setState({filter: event.target.value});
 	}
+
+
+
+
 
 	getData() {
 		let data = this.state.hockeyPlayers;
@@ -66,6 +79,9 @@ export default class RankingsSkater extends Component {
 	}
 
 
+
+
+
 	// Function called on button click to store playerID, pass that info along to a different component, and then render that component.
 	sbsHandler(comparisonData) {
 		console.log('At sbsHandler =>', comparisonData)
@@ -74,11 +90,18 @@ export default class RankingsSkater extends Component {
 	}
 
 
+
+
+
 	// Function called on button click to store playerID, pass that info along to a different component, and then render that component.
 	chartHandler(comparisonData) {
 		console.log('At chartHandler =>', comparisonData)
-		hashHistory.push(`/timeline/${comparisonData.forComparison[0]}/${comparisonData.forComparison[1]}`);
+		hashHistory.push(`/timeline_skater/${comparisonData.forComparison[0]}/${comparisonData.forComparison[1]}`);
 	}
+
+
+
+
 
 	// A data handler
 	changeComponentHandler(comparisonData) {
@@ -89,6 +112,10 @@ export default class RankingsSkater extends Component {
 			this.chartHandler(comparisonData);
 		}
 	}
+
+
+
+
 
 	stateUpdateHandler(yearAndStat) {
 		console.log('At stateUpdateHandler =>', yearAndStat);
@@ -104,6 +131,10 @@ export default class RankingsSkater extends Component {
 		)
 	}
 
+
+
+
+
 	getSettings() {
 		// just grab first player to check for null values
 		let firstPlayer = this.state.hockeyPlayers[0];
@@ -117,6 +148,10 @@ export default class RankingsSkater extends Component {
 
 		return settings;
 	}
+
+
+
+
 
 	render() {
 
