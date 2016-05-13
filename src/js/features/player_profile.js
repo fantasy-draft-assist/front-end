@@ -98,7 +98,7 @@ export default class PlayerProfile extends Component {
 			<div className="player-profile">
 				<div className="above-the-table">
 					<img src={zamboni.player.headshot_url} alt={`${zamboni.player.first_name} ${zamboni.player.last_name}`} title={`${zamboni.player.first_name} ${zamboni.player.last_name}`} width="75" height="100" />
-					{`${zamboni.player.first_name} ${zamboni.player.last_name} is a ${zamboni.player.positions[0]} who wears #${zamboni.player.uniform_number} for the ${zamboni.pro_team.name}`}
+					{`${zamboni.player.first_name} ${zamboni.player.last_name} is a ${zamboni.player.positions[0]} who wears #${zamboni.player.uniform_number} for the ${zamboni.pro_team.name}.`}
 				</div>
 				<table width="600">
 					<thead>

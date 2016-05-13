@@ -231,6 +231,7 @@ li {
 		font-family: 'Shadows Into Light', cursive;
 		width: 30%;
 		a {
+			color: $LightningBlue;
 			font-family: 'Shadows Into Light', cursive;
 			font-size: 60px;
 		}
@@ -808,9 +809,18 @@ li {
 
 .player-profile {
 	min-height: 450px;
+	.above-the-table {
+		text-align: center;
+		margin: 40px auto 20px auto;
+	}
 	table {
-		border: 5px solid red;
-		overflow: scroll;
+		// display: flex;
+		// justify-content: center;
+		// align-items: center;
+		margin: 20px auto 40px auto;
+		td {
+			text-align: center;
+		}
 	}
 
 }
@@ -825,6 +835,16 @@ li {
 
 .timeline-skater {
 	min-height: 424px;
+	.chart-area {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 50px auto;
+		canvas {
+		max-width: 600px;
+		max-height: 500px;
+		}
+	}
 }
 
 // TIMELINE SKATER COMPONENT -- END
@@ -837,6 +857,16 @@ li {
 
 .timeline-goalie {
 	min-height: 424px;
+	.chart-area {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 50px auto;
+		canvas {
+		max-width: 600px;
+		max-height: 500px;
+		}
+	}
 }
 
 // TIMELINE GOALIE COMPONENT -- END
