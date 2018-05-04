@@ -38,10 +38,10 @@ render ((
 				<Route path="/privacy" component={ Privacy } />
 				<Route path="/legal" component={ Legal } />
 				<Route path="/mock_draft" component={ MockDraft } />
-				<Route path="/rankings_skater" component={ RankingsSkater } />
+				<Route path="/rankings_skater/:page" component={ RankingsSkater } />
 				<Route path="/rankings_goalie" component={ RankingsGoalie } />
 				<Route path="/timeline_skater/:idA/:idB" component={ TimelineSkater } />
-				{<Route path="/timeline_goalie/:idA/:idB" component={ TimelineGoalie } />}
+				<Route path="/timeline_goalie/:idA/:idB" component={ TimelineGoalie } />
 				<Route path="/search_results/:name" component={ SearchResults } />
 				<Route path="/player_profile/:yahooID" component={ PlayerProfile } />
 				<Route path="/side_by_skater/:idA/:idB" component={ SideBySkater } />

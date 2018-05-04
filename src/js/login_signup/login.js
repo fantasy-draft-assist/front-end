@@ -1,5 +1,4 @@
 // This component is rendered when a user loads the root URL of the app without a valid cookie.
-
 import React, { Component } from 'react';
 import { Link, hashHistory } from 'react-router';
 import { ajax, ajaxSetup } from 'jquery';
@@ -7,10 +6,9 @@ import SSF from 'react-simple-serial-form';
 import Cookie from 'js-cookie';
 
 export default class Login extends Component {
-
 	//dataHandler is called when a user attempts to log in, making an Ajax post call to the back end.
 	dataHandler(loginData) {
-		console.log('Handler works.', loginData);
+		// console.log('Handler works.', loginData);
 		ajax({
 			url:'https://hockeydoctor.herokuapp.com/login',
 			type: 'POST',
@@ -20,13 +18,13 @@ export default class Login extends Component {
 		}).then((response) => {
 
 			//If the login is successful, the user is logged in and routed to the Home component.
-			console.log('login response', response);
+			// console.log('login response', response);
 			Cookie.set('currentUser', response.user.auth_token, { expires: 7 });
 			Cookie.set('currentUserName', response.user.username, { expires: 7 });
 			ajaxSetup({
 				headers: { Intenral: response.user.auth_token }
 			})
-			console.log(response.user.auth_token);
+			// console.log(response.user.auth_token);
 			hashHistory.push('/home');
 		}).fail(error => {
 
@@ -59,5 +57,4 @@ export default class Login extends Component {
 			</div>
 		)
 	}
-	
 }

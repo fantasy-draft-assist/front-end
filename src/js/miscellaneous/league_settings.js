@@ -1,6 +1,5 @@
 // This component is used for CRUD.
 // Specifically, users can update or delete an account when this component is rendered.
-
 import React, { Component } from 'react';
 import { hashHistory } from 'react-router';
 import SSF from 'react-simple-serial-form';
@@ -8,11 +7,9 @@ import { ajax } from 'jquery';
 import Cookie from 'js-cookie';
 
 export default class AccountSettings extends Component {
-
 	// dataHandler(putData) {
 	// 	hashHistory.push('/home');
 	// }
-
 
 	// clickHandler() {
 	// 	let currentUser = Cookie.getJSON('currentUser');
@@ -92,9 +89,8 @@ export default class AccountSettings extends Component {
 			} 
 		});
 
-		console.log('allSettings', allSettings);
-
-		console.log('user', Cookie.get('currentUser'));
+		// console.log('allSettings', allSettings);
+		// console.log('user', Cookie.get('currentUser'));
 
 		ajax({
 			url: 'https://hockeydoctor.herokuapp.com/settings',

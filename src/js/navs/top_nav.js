@@ -26,9 +26,9 @@ export default class TopNav extends Component {
 				<div className="top-links">
 					<ul className="top-links-ul">
 						<Link to="/mock_draft">
-							<li className="top-links-li ">Mock Draft</li>
+							<li className="top-links-li ">My League</li>
 						</Link>
-						<Link to="/rankings_skater">
+						<Link to="/rankings_skater/1">
 							<li className="top-links-li">Skater Rankings</li>
 						</Link>
 						<Link to="/rankings_goalie">

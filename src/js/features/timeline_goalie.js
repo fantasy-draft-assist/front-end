@@ -55,23 +55,23 @@ export default class TimelineGoalie extends Component {
 			datasets: [
 				{
 					label: /*"{`${playerOne.player.first_name} ${playerOne.player.last_name}`}",*/ "First Player",
-					fillColor: "#003e7e",
-					strokeColor: "#003e7e",
-					pointColor: "#003e7e",
+					fillColor: "yellow",
+					strokeColor: "yellow",
+					pointColor: "yellow",
 					pointStrokeColor: "#ccc",
 					pointHighlightFill: "#ccc",
-					pointHighlightStroke: "#003e7e",
+					pointHighlightStroke: "yellow",
 					/*data: [ {playerOne.stats[0].goals}, {playerOne.stats[1].goals}, {playerOne.stats[2].goals}, {playerOne.stats[3].goals} ]*/
 					data: [45, 20, 51, 32]
 				},
 				{
 					label: /*"{`${playerTwo.player.first_name} ${playerTwo.player.last_name}`}",*/"Second Player",
-					fillColor: "#ffc422",
-					strokeColor: "#ffc422",
-					pointColor: "#ffc422",
+					fillColor: "blue",
+					strokeColor: "blue",
+					pointColor: "blue",
 					pointStrokeColor: "#fff",
 					pointHighlightFill: "#fff",
-					pointHighlightStroke: "#ffc422",
+					pointHighlightStroke: "blue",
 					/*data: [ {playerTwo.stats[0].goals}, {playerTwo.stats[1].goals}, {playerTwo.stats[2].goals}, {playerTwo.stats[3].goals} ]*/
 					data: [29, 47, 32, 44]
 				}

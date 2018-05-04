@@ -1,5 +1,4 @@
 // This file is used primarily to generate select box options while writing fewer lines of code in other .js files.
-
 export default [
 	'Anaheim Ducks',
 	'Boston Bruins',
@@ -31,4 +30,4 @@ export default [
 	'Vancouver Canucks',
 	'Washington Capitals',
 	'Winnipeg Jets'
-]
+];

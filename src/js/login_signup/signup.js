@@ -1,15 +1,12 @@
 // This component renders when a user visits the site and clicks on a link from the Login component.
-
 import React, { Component } from 'react';
 import { Link, hashHistory } from 'react-router';
 import SSF from 'react-simple-serial-form';
 import Cookie from 'js-cookie';
 import { ajax, ajaxSetup } from 'jquery';
-
 import nhlTeams from '../miscellaneous/nhl_teams';
 
 export default class Signup extends Component {
-
 	// optionTeamFiller fills  in the select box with options of each NHL team for users to select.
 	optionTeamFiller(nhlTeam) {
 		return (
@@ -41,7 +38,6 @@ export default class Signup extends Component {
 		return total_options;
 	}
 
-
 	// dataHandler grabs new user info and stores it in the back end.
 	dataHandler(signupData) {
 		console.log('Handler works.', signupData);
@@ -69,7 +65,6 @@ export default class Signup extends Component {
 			alert('Signup was unsuccessful. Please try again.');
 		});
 	};
-
 
 	render() {
 		return (

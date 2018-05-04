@@ -10,10 +10,6 @@ export default class PlayerProfile extends Component {
 		this.state = { zamboni: {}, settings: {} }
 	}
 
-
-
-
-
 	componentWillMount() {
 		let { yahooID } = this.props.params;
 		ajax({
@@ -32,12 +28,8 @@ export default class PlayerProfile extends Component {
 			console.log('Response is', response);
 			this.setState( {zamboni: response} );
 			console.log('State is', this.state.zamboni);
-		})
+		});
 	}
-
-
-
-
 
 	getSettings() {
 		// just grab first player to check for null values
@@ -52,10 +44,6 @@ export default class PlayerProfile extends Component {
 
 		return settings;
 	}
-
-
-
-
 
 	getData() {
 		let zamboni = this.state.zamboni;
@@ -82,10 +70,6 @@ export default class PlayerProfile extends Component {
 			)
 		)
 	}
-
-
-
-
 
 	render() {
 		let { zamboni } = this.state;

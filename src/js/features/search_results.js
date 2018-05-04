@@ -28,12 +28,8 @@ export default class SearchResults extends Component {
 		// console.log('data[0].player shows =>', data[0].player);
 
 		this.setState({thePlaya: data[0].player});
-
-
-
 		})
 	}
-
 
 	wordsOnPage() {
 		let data = this.state.playersToReturn;
@@ -79,15 +75,11 @@ export default class SearchResults extends Component {
 		)
 	}
 
-	
-
 	render() {
-
 		let data = this.state.playersToReturn;
-
 		let player = this.state.thePlaya;
-		console.log("players in state", data[0]);
-		console.log("player", player.last_name);
+		// console.log("players in state", data[0]);
+		// console.log("player", player.last_name);
 		// if (!data.player) {
 		// 	return (
 		// 		<div>No players found.</div>

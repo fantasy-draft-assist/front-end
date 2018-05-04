@@ -1,21 +1,16 @@
 // This component is used to compare two NHL players (and their respective statistics) in a side-by-side format.
-
 import React, { Component } from 'react';
 import { ajax } from 'jquery';
 import Cookie from 'js-cookie';
 
 export default class SideByGoalie extends Component {
-
 	constructor(...args) {
 		super(...args);
 
 		this.state = { playersBeingCompared: [] }
 	}
 
-
 // http://hockeydoctor.herokuapp.com/players/one/35/
-
-
 	componentWillMount() {
 		let { idA, idB } = this.props.params;
 		ajax({
@@ -40,10 +35,9 @@ export default class SideByGoalie extends Component {
 		)
 	}
 
-
 	getSBSPlayers() {
 		let twoPlayers = this.state.playersBeingCompared;
-		console.log('Got it in the SBSPlayers callbck =>', twoPlayers);
+		// console.log('Got it in the SBSPlayers callbck =>', twoPlayers);
 		// if ({twoPlayers.player.uniform_number} === 35) {
 		// 	{datum.player.uniform_number} = 69;
 		// }

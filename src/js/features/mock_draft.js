@@ -32,7 +32,11 @@ export default class MockDraft extends Component {
 		return (
 			<div className="mock-draft">
 				<div>
-					Coming Soon
+					<p>Coming Soon</p>
+					<p className='lower'>Team Management</p>
+					<p className='lower'>Compare Teams</p>
+					<p className='lower'>Add / Drop Players</p>
+					<p className='lower'>Mock Draft</p>
 				</div>
 			</div>
 		)

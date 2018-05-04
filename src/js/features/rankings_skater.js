@@ -7,7 +7,7 @@ import { ajax, ajaxSetup } from 'jquery';
 import SSF from 'react-simple-serial-form';
 import { hashHistory } from 'react-router';
 import Cookie from 'js-cookie';
-
+import Icon from '../miscellaneous/icon';
 
 export default class RankingsSkater extends Component {
 
@@ -17,14 +17,14 @@ export default class RankingsSkater extends Component {
 		this.state = { hockeyPlayers: [], filter: null, settings: {} };
 	}
 
-
-
-
-
 	// When the component mounts
 	componentWillMount() {
+		let { page } = this.props.params;
+		let pageUp = (page * 1) + 1;
+		console.log('Page is', page);
+		console.log('Page + 1 is', pageUp);
 		ajax({
-			url: 'https://hockeydoctor.herokuapp.com/players/index/2015/goals/1',
+			url: `https://hockeydoctor.herokuapp.com/players/index/2015/goals/${page}`,
 			headers: { Internal: Cookie.get('currentUser') }
 			}).then((hockeyPlayers) => {
 			console.log('Hockey Players I Got Back =>',hockeyPlayers);
@@ -41,17 +41,9 @@ export default class RankingsSkater extends Component {
 		});
 	}
 
-
-
-
-
 	setFilter(event) {
 		this.setState({filter: event.target.value});
 	}
-
-
-
-
 
 	getData() {
 		let data = this.state.hockeyPlayers;
@@ -78,10 +70,6 @@ export default class RankingsSkater extends Component {
 		)
 	}
 
-
-
-
-
 	// Function called on button click to store playerID, pass that info along to a different component, and then render that component.
 	sbsHandler(comparisonData) {
 		console.log('At sbsHandler =>', comparisonData)
@@ -89,19 +77,11 @@ export default class RankingsSkater extends Component {
 		hashHistory.push(`/side_by_skater/${comparisonData.forComparison[0]}/${comparisonData.forComparison[1]}`);
 	}
 
-
-
-
-
 	// Function called on button click to store playerID, pass that info along to a different component, and then render that component.
 	chartHandler(comparisonData) {
 		console.log('At chartHandler =>', comparisonData)
 		hashHistory.push(`/timeline_skater/${comparisonData.forComparison[0]}/${comparisonData.forComparison[1]}`);
 	}
-
-
-
-
 
 	// A data handler
 	changeComponentHandler(comparisonData) {
@@ -112,10 +92,6 @@ export default class RankingsSkater extends Component {
 			this.chartHandler(comparisonData);
 		}
 	}
-
-
-
-
 
 	stateUpdateHandler(yearAndStat) {
 		console.log('At stateUpdateHandler =>', yearAndStat);
@@ -131,10 +107,6 @@ export default class RankingsSkater extends Component {
 		)
 	}
 
-
-
-
-
 	getSettings() {
 		// just grab first player to check for null values
 		let firstPlayer = this.state.hockeyPlayers[0];
@@ -149,15 +121,22 @@ export default class RankingsSkater extends Component {
 		return settings;
 	}
 
+	pageDownHandler() {
+		let { page } = this.props.params;
+		let pageMinusOne = (page * 1) - 1;
+		console.log('page and minus', page, pageMinusOne);
+		hashHistory.push(`/rankings_skater/${pageMinusOne}`);
+	}
 
-
-
+	pageUpHandler() {
+		let { page } = this.props.params;
+		let pagePlusOne = (page * 1) + 1;
+		console.log('page and plus', page, pagePlusOne);
+		hashHistory.push(`/rankings_skater/${pagePlusOne}`);
+	}
 
 	render() {
-
 		let settings = this.getSettings();
-
-
 		return (
 			<div className="rankings-skater">
 				<SSF className="top-form" onData={::this.stateUpdateHandler}>
@@ -193,6 +172,14 @@ export default class RankingsSkater extends Component {
 					</select>
 					<button className="stat-year-button">Check It Out</button>
 				</SSF>
+					<div className='hide-this'>
+						<button onClick={::this.pageDownHandler}>
+							<Icon type='fa fa-arrow-left' />
+						</button>
+						<button onClick={::this.pageUpHandler}>
+							<Icon type='fa fa-arrow-right' />
+						</button>
+					</div>
 				<SSF onData={::this.changeComponentHandler} className="table-form">
 					<div className="filter-by-position">
 						<span className="filter-text">
